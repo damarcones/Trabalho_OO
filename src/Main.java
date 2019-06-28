@@ -1,9 +1,12 @@
 import excecoes.*;
 import veiculo.Veiculo;
+
+import java.awt.HeadlessException;
+
 import javax.swing.*;
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws HeadlessException, Exception {
 		// TODO Auto-generated method stub
 		Veiculo carro = new Veiculo();
 		double tanque;
@@ -19,24 +22,18 @@ public class Main {
 		tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
 		carro.setCapacidadeTanque(tanque);
 		*/
+		
 		try {
-			carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));
-			carro.setModelo(JOptionPane.showInputDialog("Modelo"));
-			throw new DescricaEmBrancoException();
-			
+			carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
 		}
-		catch(DescricaEmBrancoException e) {			
-			JOptionPane.showMessageDialog(null,e + "\nCampo obrigatorio");
-			carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));
+		catch(DescricaEmBrancoException e) {	
+			throw new DescricaEmBrancoException(e.getMessage());
 		}
 			
 		finally{
 		System.out.println(carro.getMarca());
-		
+		//JOptionPane.showMessageDialog(null,carro.getMarca());
 		}
 
-			
-
-	
 			}
 }

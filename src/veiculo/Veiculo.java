@@ -24,8 +24,15 @@ public class Veiculo {
 		return marca;
 	}
 
-	public void setMarca(String marca) {
+	public void setMarca(String marca) throws Exception{
+		
+		try {
 		this.marca = marca;
+		throw new DescricaEmBrancoException();
+		}
+		catch(DescricaEmBrancoException e) {
+			throw e;
+		}
 	}
 
 	public String getModelo() {
