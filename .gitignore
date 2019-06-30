@@ -1,1 +1,6 @@
-/bin/
+.gitignore
+
+
+build.xml
+manifest.mf
+nbproject/
