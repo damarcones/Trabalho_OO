@@ -1,15 +1,26 @@
 import excecoes.*;
 import veiculo.Veiculo;
-
-import java.awt.HeadlessException;
-
 import javax.swing.*;
-public class Main {
+import javax.swing.*;
 
-	public static void main(String[] args) throws HeadlessException, Exception {
+public class Main {
+	
+	private final static String MENU_INICIAL = "Menu de Opções\n"+ 
+			"1) Cadastrar Veiculo:\n"+
+			"2) Registrar Despesa:\n"+
+			"3) Gerar Relatório:\n"+
+			"0) Sair\n"+
+			"Escolha uma opção\n";
+	
+	
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		Veiculo carro = new Veiculo();
-		double tanque;
+		//double tanque;
+		int opcao=-1;
+		
+		
+		
 	
 		/*
 		carro.setModelo(JOptionPane.showInputDialog("Modelo"));
@@ -22,18 +33,48 @@ public class Main {
 		tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
 		carro.setCapacidadeTanque(tanque);
 		*/
-		
+		do {
 		try {
-			carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
+		opcao = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
 		}
-		catch(DescricaEmBrancoException e) {	
-			throw new DescricaEmBrancoException(e.getMessage());
+		catch(Exception e){
+			JOptionPane.showMessageDialog(null	,"Digite um valor válido");
+			opcao = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
 		}
-			
-		finally{
-		System.out.println(carro.getMarca());
-		//JOptionPane.showMessageDialog(null,carro.getMarca());
-		}
+		
+		switch(opcao) {
+		case 0:
+			break;
+			case 1:
+				try {
+					carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
+					//testar leitura vazia ou só com espaços
+					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo"));	
+				}
+				catch(Exception e){
+				JOptionPane.showMessageDialog(null,e);
+				
+				}
 
+			break;
+			
+			default:
+				JOptionPane.showMessageDialog(null," Digite um numero válido");
+				
 			}
+//		if(opcao == 0 )
+//			break;
+		
+		}while(opcao != 0);
+		JOptionPane.showMessageDialog(null,"Finalizado com Sucesso!!!\n");
+		
+//		finally{
+//		System.out.println(carro.getMarca());
+//		//JOptionPane.showMessageDialog(null	,carro.getMarca());
+//		}
+//
+			}
+
 }
+
+

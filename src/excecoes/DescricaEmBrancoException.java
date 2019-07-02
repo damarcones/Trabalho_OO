@@ -12,7 +12,6 @@ private String mensagem;
 		this.mensagem = mensagem;
 
 	}
-	
 	public String toString() {
 		return "Descricao Em Branco Exception!";
 	} 

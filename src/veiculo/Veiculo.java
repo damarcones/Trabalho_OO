@@ -1,7 +1,7 @@
 package veiculo;
 import excecoes.*;
 
-public class Veiculo {
+public class Veiculo extends DescricaEmBrancoException  {
 	
 	private String marca;
 	private String modelo;
@@ -15,8 +15,8 @@ public class Veiculo {
 	private double capacidadeTanque;
 	
 
-	public Veiculo() {
-		super();
+	public Veiculo() throws DescricaEmBrancoException {
+		
 	}
 
 	public String getMarca() {
@@ -24,11 +24,14 @@ public class Veiculo {
 		return marca;
 	}
 
-	public void setMarca(String marca) throws Exception{
+	public void setMarca(String marca) throws DescricaEmBrancoException{
 		
 		try {
-		this.marca = marca;
-		throw new DescricaEmBrancoException();
+			if(marca.trim().equalsIgnoreCase("")||marca.isEmpty()||marca == null) {
+				throw new DescricaEmBrancoException();
+			}
+			this.marca = marca.trim();
+		
 		}
 		catch(DescricaEmBrancoException e) {
 			throw e;
