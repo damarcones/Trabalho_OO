@@ -19,6 +19,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 	
 
 	public Veiculo() throws DescricaEmBrancoException {
+		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
 		despesas = new ArrayList();
 	}
 
