@@ -1,6 +1,6 @@
 package registros;
 
-public class RegistrarManutencao extends Despesas{
+public class RegistrarManutencao extends Despesa{
     private int KmAtual;
     
     public void RegistrarManutenção(){

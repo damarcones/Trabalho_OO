@@ -12,16 +12,26 @@ public class Main {
 			"0) Sair\n"+
 			"Escolha uma opção\n";
 	
+	private final static String MENU_DESPESA = "Resgitrar Despesa\n"+
+			"1) Abastecimento:\n"+
+			"2) Manutenção:\n"+
+			"3) Taxas:\n"+
+			"0) Sair\n"+
+			"Escolha uma opção\n";
+	private final static String GERAR_RELATORIO = "Gerar Relatório\n"+
+			"1) Desempenho:\n"+
+			"2) Consumo:\n"+
+			"0) Sair\n"+
+			"Escolha uma opção\n";
+	
 	
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		Veiculo carro = new Veiculo();
 		//double tanque;
-		int opcao=-1;
 		
+		int opcaoMenu = -1;
 		
-		
-	
 		/*
 		carro.setModelo(JOptionPane.showInputDialog("Modelo"));
 		carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação"));
@@ -35,17 +45,12 @@ public class Main {
 		*/
 		do {
 		try {
-		opcao = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
-		}
-		catch(Exception e){
-			JOptionPane.showMessageDialog(null	,"Digite um valor válido");
-			opcao = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
-		}
-		
-		switch(opcao) {
-		case 0:
-			break;
-			case 1:
+			opcaoMenu = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
+			
+			switch(opcaoMenu) {
+			case 0:
+				break;
+			case 1: // REGISTRAR CARROS
 				try {
 					carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
 					//testar leitura vazia ou só com espaços
@@ -55,25 +60,100 @@ public class Main {
 				JOptionPane.showMessageDialog(null,e);
 				
 				}
-
+			break;
+			case 2: //REGISTRAR DESPESAS
+				int opcaoDespesa = -1;
+				do {
+					try {
+						opcaoDespesa = Integer.parseInt(JOptionPane.showInputDialog(MENU_DESPESA));
+						
+						switch(opcaoDespesa) {
+						case 0:
+							break;
+						case 1:
+							//REGISTRAR ABASTECIMENTO
+						break;
+						
+						case 2:
+							//REGISTRAR MANUTENÇÃO
+						break;
+						
+						case 3:
+							//REGISTAR TAXA(IMPOSTO, SEGURO, ETC)
+						break;
+						
+						default:
+							JOptionPane.showMessageDialog(null," Digite um numero válido");
+						
+						}
+					}
+					
+					catch( NumberFormatException f) {
+						JOptionPane.showMessageDialog(null	,"Digite um valor");
+					}
+					catch(Exception e){
+						JOptionPane.showMessageDialog(null	,"Digite um valor válido");
+						opcaoDespesa= Integer.parseInt(JOptionPane.showInputDialog(MENU_DESPESA));
+					}
+					
+				}while(opcaoDespesa != 0);
+				
 			break;
 			
-			default:
-				JOptionPane.showMessageDialog(null," Digite um numero válido");
+			case 3:// MOSTRAR RELATORIOS
+				int opcaoRelatorio = -1;
+				do {
+					try {
+						opcaoRelatorio = Integer.parseInt(JOptionPane.showInputDialog(GERAR_RELATORIO));
+						
+						switch(opcaoRelatorio) {
+						case 0:
+							break;
+						case 1:
+							//RELATORIO DE DESEMPENHO
+						break;
+						
+						case 2:
+							//RELATORIO DE CONSUMO
+						break;
+						
+
+						
+						default:
+							JOptionPane.showMessageDialog(null," Digite um numero válido");
+						
+						}
+	}
+					
+					catch( NumberFormatException f) {
+						JOptionPane.showMessageDialog(null	,"Digite um valor");
+					}
+					catch(Exception e){
+						JOptionPane.showMessageDialog(null	,"Digite um valor válido");
+						opcaoRelatorio= Integer.parseInt(JOptionPane.showInputDialog(GERAR_RELATORIO));
+					}
+					
+				}while(opcaoRelatorio != 0);
+				break;
 				
-			}
-//		if(opcao == 0 )
-//			break;
+				default:
+					JOptionPane.showMessageDialog(null," Digite um numero válido");
+					
+				}
+		}
+		catch( NumberFormatException f) {
+			JOptionPane.showMessageDialog(null	,"Digite um valor");
+		}
+		catch(Exception e){
+			JOptionPane.showMessageDialog(null	,"Digite um valor válido");
+			opcaoMenu = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
+		}
 		
-		}while(opcao != 0);
+
+		}while(opcaoMenu != 0);
 		JOptionPane.showMessageDialog(null,"Finalizado com Sucesso!!!\n");
-		
-//		finally{
-//		System.out.println(carro.getMarca());
-//		//JOptionPane.showMessageDialog(null	,carro.getMarca());
-//		}
-//
-			}
+
+		}
 
 }
 

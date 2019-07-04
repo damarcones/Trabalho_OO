@@ -1,6 +1,6 @@
 package registros;
 
-public class RegistrarTaxa extends Despesas{
+public class RegistrarTaxa extends Despesa{
     private String CategoriaTaxa;
     
     public void RegistroTaxa(){

@@ -1,6 +1,6 @@
 package registros;
 
-public class RegistrarAbastecimento extends Despesas {
+public class RegistrarAbastecimento extends Despesa {
     private String TipoCombustivel;
     private double ValorCombustivel;
     private int KmAtual;

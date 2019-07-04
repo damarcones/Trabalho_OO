@@ -1,6 +1,6 @@
 package registros;
 
-public class Despesas {
+public class Despesa {
     private String nome;
     private String data;
     private double ValorToral;

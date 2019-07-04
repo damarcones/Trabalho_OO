@@ -1,5 +1,7 @@
 package veiculo;
 import excecoes.*;
+import registros.*;
+import java.util.*;
 
 public class Veiculo extends DescricaEmBrancoException  {
 	
@@ -13,10 +15,11 @@ public class Veiculo extends DescricaEmBrancoException  {
 	private String placa;
 	private String renavam;
 	private double capacidadeTanque;
+	private ArrayList <Despesa> despesas;
 	
 
 	public Veiculo() throws DescricaEmBrancoException {
-		
+		despesas = new ArrayList();
 	}
 
 	public String getMarca() {
@@ -110,7 +113,9 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.capacidadeTanque = capacidadeTanque;
 	}
 
-	
+	public void addDespesa(Despesa d) {
+		this.despesas.add(d);
+	}
 	
 	
 }
