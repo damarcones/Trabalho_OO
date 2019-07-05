@@ -3,7 +3,7 @@ import excecoes.*;
 import registros.*;
 import java.util.*;
 
-public class Veiculo extends DescricaEmBrancoException  {
+public class Veiculo extends DescricaoEmBrancoException  {
 	
 	private String marca;
 	private String modelo;
@@ -18,30 +18,31 @@ public class Veiculo extends DescricaEmBrancoException  {
 	private ArrayList <Despesa> despesas;
 	
 
-	public Veiculo() throws DescricaEmBrancoException {
+	public Veiculo() throws DescricaoEmBrancoException {
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
 		despesas = new ArrayList();
 	}
-
+///////////////////////////////////MARCA//////////////////////////////////////
 	public String getMarca() {
 	
 		return marca;
 	}
 
-	public void setMarca(String marca) throws DescricaEmBrancoException{
+	public void setMarca(String marca) throws DescricaoEmBrancoException{                //trim().equalsIgnoreCase= remove espaço
 		
 		try {
 			if(marca.trim().equalsIgnoreCase("")||marca.isEmpty()||marca == null) {
-				throw new DescricaEmBrancoException();
+				throw new DescricaoEmBrancoException();
 			}
 			this.marca = marca.trim();
 		
 		}
-		catch(DescricaEmBrancoException e) {
+		catch(DescricaoEmBrancoException e) {
 			throw e;
 		}
 	}
 
+///////////////////////////////////MODELO//////////////////////////////////////
 	public String getModelo() {
 		return modelo;
 	}
@@ -50,6 +51,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.modelo = modelo;
 	}
 
+///////////////////////////////////ANO DE FABRICACAO//////////////////////////////////////
 	public String getAnoFabricacao() {
 		return anoFabricacao;
 	}
@@ -58,6 +60,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.anoFabricacao = anoFabricacao;
 	}
 
+///////////////////////////////////ANO DO MODELO//////////////////////////////////////
 	public String getAnoModelo() {
 		return anoModelo;
 	}
@@ -66,6 +69,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.anoModelo = anoModelo;
 	}
 
+///////////////////////////////////MOTORIZACAO//////////////////////////////////////
 	public String getMotorizacao() {
 		return motorizacao;
 	}
@@ -74,6 +78,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.motorizacao = motorizacao;
 	}
 
+///////////////////////////////////COMBUSTIVEIS//////////////////////////////////////
 	public String getCombustiveis() {
 		return combustiveis;
 	}
@@ -82,6 +87,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.combustiveis = cobustiveis;
 	}
 
+///////////////////////////////////COR//////////////////////////////////////
 	public String getCor() {
 		return cor;
 	}
@@ -90,6 +96,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.cor = cor;
 	}
 
+///////////////////////////////////PLACA//////////////////////////////////////
 	public String getPlaca() {
 		return placa;
 	}
@@ -98,6 +105,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.placa = placa;
 	}
 
+///////////////////////////////////RENAVAM//////////////////////////////////////
 	public String getRenavam() {
 		return renavam;
 	}
@@ -106,6 +114,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.renavam = renavam;
 	}
 
+///////////////////////////////////CAPACIDADE DO TANQUE//////////////////////////////////////
 	public double getCapacidadeTanque() {
 		return capacidadeTanque;
 	}
@@ -114,6 +123,7 @@ public class Veiculo extends DescricaEmBrancoException  {
 		this.capacidadeTanque = capacidadeTanque;
 	}
 
+///////////////////////////////////MARCA//////////////////////////////////////
 	public void addDespesa(Despesa d) {
 		this.despesas.add(d);
 	}

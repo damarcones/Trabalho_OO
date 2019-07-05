@@ -3,7 +3,7 @@ package registros;
 public class RegistrarManutencao extends Despesa{
     private int KmAtual;
     
-    public void RegistrarManutenção(){
+    public void RegistrarManutencao(){
         
     }
 
