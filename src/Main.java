@@ -6,23 +6,23 @@ import javax.swing.*;
 public class Main {
 	
 	private final static String MENU_INICIAL = "MENU DE OPÇÕES\n"+ 
-			"1) Cadastrar Veiculo;\n"+
+			"1) Cadastrar Veículo;\n"+
 			"2) Registrar Despesa;\n"+
-			"3) Gerar RelatÃ³rio;\n"+
+			"3) Gerar Relatório;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opÃ§Ã£o:\n";
+			"Escolha uma opção:\n";
 	
 	private final static String MENU_DESPESA = "REGISTRAR DESPESA\n"+
 			"1) Abastecimento;\n"+
-			"2) ManutenÃ§Ã£o;\n"+
+			"2) Manutenção;\n"+
 			"3) Taxas;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opÃ§Ã£o:\n";
+			"Escolha uma opção:\n";
 	private final static String GERAR_RELATORIO = "GERAR RELATÓRIO\n"+
 			"1) Desempenho;\n"+
 			"2) Consumo;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opÃ§Ã£o:\n";
+			"Escolha uma opção:\n";
 	
 	private final static Object[] mensagem = {
 		       "Marca do carro:", carro.setMarca,
