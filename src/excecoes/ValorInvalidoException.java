@@ -13,7 +13,7 @@ public class ValorInvalidoException extends Exception {
 	}
 	
 	public String toString() {
-		return "ValorInvalidoException" + mensagem;
+		return "Valor informado é inválido! Digite um valor válido";
 	} 
 	
 	
