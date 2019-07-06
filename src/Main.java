@@ -24,11 +24,23 @@ public class Main {
 			"0) Sair.\n"+
 			"Escolha uma opção:\n";
 	
+	private final static Object[] mensagem = {
+		       "Marca do carro:", carro.setMarca,
+		       "Modelo:", modelo,
+		       "Ano de fabrica��o:", anofabricacao,
+		       "Ano do modelo:", anomodelo,
+		       "Motoriza��o:", motorizacao,
+		       "Capacidade do tanque:", capacidadetanque,
+		       "Combust�veis aceitos:", combustiveis,
+		       "Cor:", cor,
+		       "Placa:", placa,
+		       "Renavam:", renavam
+		   };
+	
 	
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+		
 		Veiculo carro = new Veiculo();
-		//double tanque;
 		
 		int opcaoMenu = -1;
 		
@@ -53,19 +65,32 @@ public class Main {
 			case 1: // REGISTRAR CARROS
 				try {
 					double tanque;
-					carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
-					//testar leitura vazia ou só com espaços
-					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo"));
+					Integer.parseInt(JOptionPane.showInputDialog(mensagem));
 					
-					carro.setModelo(JOptionPane.showInputDialog("Modelo"));
-					carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação"));
-					carro.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
-					carro.setMotorizacao(JOptionPane.showInputDialog("Motorização"));
-					carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
-					carro.setCor(JOptionPane.showInputDialog("Cor "));
-					carro.setPlaca(JOptionPane.showInputDialog("Placa "));
-					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
-					carro.setCapacidadeTanque(tanque);
+						JTextField marca = new JTextField();
+						JTextField modelo = new JTextField();
+						JTextField anofabricacao = new JTextField();
+						JTextField anomodelo = new JTextField();
+						JTextField motorizacao = new JTextField();
+						JTextField capacidadetanque = new JTextField();
+						JTextField combustiveis = new JTextField();
+						JTextField cor = new JTextField();
+						JTextField placa = new JTextField();
+						JTextField renavam = new JTextField();
+					
+//					carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
+//					//testar leitura vazia ou só com espaços
+//					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo"));
+//					
+//					carro.setModelo(JOptionPane.showInputDialog("Modelo"));
+//					carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação"));
+//					carro.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
+//					carro.setMotorizacao(JOptionPane.showInputDialog("Motorização"));
+//					carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
+//					carro.setCor(JOptionPane.showInputDialog("Cor "));
+//					carro.setPlaca(JOptionPane.showInputDialog("Placa "));
+//					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
+//					carro.setCapacidadeTanque(tanque);
 				}
 				catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);

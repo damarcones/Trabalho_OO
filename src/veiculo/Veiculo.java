@@ -10,11 +10,11 @@ public class Veiculo extends DescricaoEmBrancoException  {
 	private String anoFabricacao;
 	private String anoModelo;
 	private String motorizacao;
+	private double capacidadeTanque;
 	private String combustiveis;
 	private String cor;
 	private String placa;
 	private String renavam;
-	private double capacidadeTanque;
 	private ArrayList <Despesa> despesas;
 	
 
