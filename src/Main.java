@@ -1,60 +1,37 @@
 import excecoes.*;
 import veiculo.Veiculo;
 import javax.swing.*;
-import javax.swing.*;
 
-public class Main {
+public class Main  {
 	
-	private final static String MENU_INICIAL = "MENU DE OP«’ES\n"+ 
-			"1) Cadastrar VeÌculo;\n"+
+	private final static String MENU_INICIAL = "MENU DE OP√á√ïES\n"+ 
+			"1) Cadastrar Ve√≠culo;\n"+
 			"2) Registrar Despesa;\n"+
-			"3) Gerar RelatÛrio;\n"+
+			"3) Gerar Relat√≥rio;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opÁ„o:\n";
+			"Escolha uma op√ß√£o:\n";
 	
 	private final static String MENU_DESPESA = "REGISTRAR DESPESA\n"+
 			"1) Abastecimento;\n"+
-			"2) ManutenÁ„o;\n"+
+			"2) Manuten√ßao;\n"+
 			"3) Taxas;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opÁ„o:\n";
-	private final static String GERAR_RELATORIO = "GERAR RELAT”RIO\n"+
+			"Escolha uma op√ß√£o:\n";
+	private final static String GERAR_RELATORIO = "GERAR RELAT√ìRIO\n"+
 			"1) Desempenho;\n"+
 			"2) Consumo;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opÁ„o:\n";
+			"Escolha uma op√ß√£o:\n";
 	
-	private final static Object[] mensagem = {
-		       "Marca do carro:", carro.setMarca,
-		       "Modelo:", modelo,
-		       "Ano de fabricaÁ„o:", anofabricacao,
-		       "Ano do modelo:", anomodelo,
-		       "MotorizaÁ„o:", motorizacao,
-		       "Capacidade do tanque:", capacidadetanque,
-		       "CombustÌveis aceitos:", combustiveis,
-		       "Cor:", cor,
-		       "Placa:", placa,
-		       "Renavam:", renavam
-		   };
+
 	
 	
 	public static void main(String[] args) throws Exception {
 		
-		Veiculo carro = new Veiculo();
+		Veiculo carro = new Veiculo();	
 		
 		int opcaoMenu = -1;
 		
-		/*
-		carro.setModelo(JOptionPane.showInputDialog("Modelo"));
-		carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabrica√ß√£o"));
-		carro.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
-		carro.setMotorizacao(JOptionPane.showInputDialog("Motoriza√ß√£o"));
-		carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
-		carro.setCor(JOptionPane.showInputDialog("Cor "));
-		carro.setPlaca(JOptionPane.showInputDialog("Placa "));
-		tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
-		carro.setCapacidadeTanque(tanque);
-		*/
 		do {
 		try {
 			opcaoMenu = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
@@ -65,32 +42,20 @@ public class Main {
 			case 1: // REGISTRAR CARROS
 				try {
 					double tanque;
-					Integer.parseInt(JOptionPane.showInputDialog(mensagem));
 					
-						JTextField marca = new JTextField();
-						JTextField modelo = new JTextField();
-						JTextField anofabricacao = new JTextField();
-						JTextField anomodelo = new JTextField();
-						JTextField motorizacao = new JTextField();
-						JTextField capacidadetanque = new JTextField();
-						JTextField combustiveis = new JTextField();
-						JTextField cor = new JTextField();
-						JTextField placa = new JTextField();
-						JTextField renavam = new JTextField();
+					carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
+					//testar leitura vazia ou s√≥ com espa√ßos
+					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo"));
 					
-//					carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
-//					//testar leitura vazia ou s√≥ com espa√ßos
-//					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo"));
-//					
-//					carro.setModelo(JOptionPane.showInputDialog("Modelo"));
-//					carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabrica√ß√£o"));
-//					carro.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
-//					carro.setMotorizacao(JOptionPane.showInputDialog("Motoriza√ß√£o"));
-//					carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
-//					carro.setCor(JOptionPane.showInputDialog("Cor "));
-//					carro.setPlaca(JOptionPane.showInputDialog("Placa "));
-//					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
-//					carro.setCapacidadeTanque(tanque);
+					carro.setModelo(JOptionPane.showInputDialog("Modelo"));
+					carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabrica√ß√£o"));
+					carro.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
+					carro.setMotorizacao(JOptionPane.showInputDialog("Motoriza√ß√£o"));
+					carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
+					carro.setCor(JOptionPane.showInputDialog("Cor "));
+					carro.setPlaca(JOptionPane.showInputDialog("Placa "));
+					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
+					carro.setCapacidadeTanque(tanque);
 				}
 				catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
@@ -119,7 +84,7 @@ public class Main {
 						break;
 						
 						default:
-							JOptionPane.showMessageDialog(null," Digite um n˙mero v√°lido!");
+							JOptionPane.showMessageDialog(null," Digite um nÔøΩmero v√°lido!");
 						
 						}
 					}
@@ -182,7 +147,7 @@ public class Main {
 		}
 		catch(Exception e){
 			JOptionPane.showMessageDialog(null	,"Digite um valor v√°lido");
-			opcaoMenu = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
+			
 		}
 		
 
