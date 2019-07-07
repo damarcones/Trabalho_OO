@@ -1,6 +1,7 @@
 import excecoes.*;
 import veiculo.Veiculo;
 import javax.swing.*;
+import java.util.*;
 
 public class Main  {
 	
@@ -28,7 +29,9 @@ public class Main  {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Veiculo carro = new Veiculo();	
+		Set<Veiculo> carro =  new HashSet<Veiculo>();
+		
+		Veiculo carros = new Veiculo();	
 		
 		int opcaoMenu = -1;
 		
@@ -43,24 +46,25 @@ public class Main  {
 				try {
 					double tanque;
 					
-					carro.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
+					carros.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
 					//testar leitura vazia ou só com espaços
-					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo"));
-					
-					carro.setModelo(JOptionPane.showInputDialog("Modelo"));
-					carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação"));
-					carro.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
-					carro.setMotorizacao(JOptionPane.showInputDialog("Motorização"));
-					carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
-					carro.setCor(JOptionPane.showInputDialog("Cor "));
-					carro.setPlaca(JOptionPane.showInputDialog("Placa "));
+					carros.setModelo(JOptionPane.showInputDialog("Modelo"));
+					carros.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação"));
+					carros.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
+					carros.setMotorizacao(JOptionPane.showInputDialog("Motorização"));
+					carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
+					carros.setCor(JOptionPane.showInputDialog("Cor "));
+					carros.setPlaca(JOptionPane.showInputDialog("Placa "));
 					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
-					carro.setCapacidadeTanque(tanque);
+					carros.setCapacidadeTanque(tanque);
+					carro.addAll(carro);
 				}
 				catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
+				e.fillInStackTrace();
 				
 				}
+				
 			break;
 			case 2: //REGISTRAR DESPESAS
 				int opcaoDespesa = -1;
@@ -152,6 +156,7 @@ public class Main  {
 		
 
 		}while(opcaoMenu != 0);
+		JOptionPane.showMessageDialog(null,carro);
 		JOptionPane.showMessageDialog(null,"Programa Finalizado com Sucesso!\n");
 		}
 
