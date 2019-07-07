@@ -1,4 +1,5 @@
 package registros;
+import excecoes.*;
 
 public class RegistrarAbastecimento extends Despesa {
     private String TipoCombustivel;
@@ -7,7 +8,7 @@ public class RegistrarAbastecimento extends Despesa {
     private boolean TanqueCheio;
 
 
-    public void Abastecimento(){
+    public void Abastecimento() {
         
     }
 
