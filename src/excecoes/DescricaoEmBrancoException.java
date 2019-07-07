@@ -13,7 +13,7 @@ private String mensagem;
 
 	}
 	public String toString() {
-		return "Descrição em branco! Digite um valor válido.";
+		return "Descrição em branco! Digite um valor.";
 	} 
 
 }

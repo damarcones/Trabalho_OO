@@ -3,12 +3,12 @@ import excecoes.*;
 import registros.*;
 import java.util.*;
 
-public class Veiculo extends DescricaoEmBrancoException  {
+public class Veiculo extends Exception {
 	
 	private String marca;
 	private String modelo;
-	private String anoFabricacao;
-	private String anoModelo;
+	private int anoFabricacao;
+	private int anoModelo;
 	private String motorizacao;
 	private double capacidadeTanque;
 	private String combustiveis;
@@ -20,7 +20,7 @@ public class Veiculo extends DescricaoEmBrancoException  {
 
 	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
-		despesas = new ArrayList();
+		//despesas = new ArrayList();
 	}
 	
 ///////////////////////////////////MARCA//////////////////////////////////////
@@ -61,17 +61,17 @@ public class Veiculo extends DescricaoEmBrancoException  {
 	}
 
 ///////////////////////////////////ANO DE FABRICACAO//////////////////////////////////////
-	public String getAnoFabricacao() {
+	public int getAnoFabricacao() {
 		return anoFabricacao;
 	}
 
-	public void setAnoFabricacao(String anoFabricacao) throws DescricaoEmBrancoException{
+	public void setAnoFabricacao(int anoFabricacao) throws DescricaoEmBrancoException{
 		
 		try {
-			if(anoFabricacao.trim().equalsIgnoreCase("")||anoFabricacao.isEmpty()||anoFabricacao == null) {
+			if(anoFabricacao == 0) {
 				throw new DescricaoEmBrancoException();
 			}
-			this.anoFabricacao = anoFabricacao.trim();
+			this.anoFabricacao = anoFabricacao;
 		
 		}
 		catch(DescricaoEmBrancoException e) {
@@ -80,22 +80,21 @@ public class Veiculo extends DescricaoEmBrancoException  {
 	}
 
 ///////////////////////////////////ANO DO MODELO//////////////////////////////////////
-	public String getAnoModelo() {
+	public int getAnoModelo() {
 		return anoModelo;
 	}
 
-	public void setAnoModelo(String anoModelo)  throws DescricaoEmBrancoException {
+	public void setAnoModelo(int anoModelo)  throws ValorInvalidoException {
 		
 		try {
-			if(anoModelo.trim().equalsIgnoreCase("")||anoModelo.isEmpty()||anoModelo == null) {
-				throw new DescricaoEmBrancoException();
+			if(anoModelo <= 0) {
+				throw new ValorInvalidoException();
+				}
+					this.anoModelo = anoModelo;	
 			}
-			this.anoModelo = anoModelo.trim();
-		
-		}
-		catch(DescricaoEmBrancoException e) {
-			throw e;
-		}
+			catch(ValorInvalidoException f) {
+				throw f;
+			}
 	}
 
 ///////////////////////////////////MOTORIZACAO//////////////////////////////////////
@@ -198,7 +197,7 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return capacidadeTanque;
 	}
 
-	public void setCapacidadeTanque(double capacidadeTanque)  throws DescricaoEmBrancoException, ValorInvalidoException{
+	public void setCapacidadeTanque(double capacidadeTanque)  throws ValorInvalidoException{
 		
 		try {
 			if(capacidadeTanque <= 0.0) {
@@ -211,7 +210,6 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		catch(ValorInvalidoException f) {
 			throw f;
 		}
-		
 	}
 
 //*******************************************************************

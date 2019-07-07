@@ -45,17 +45,19 @@ public class Main  {
 			case 1: // REGISTRAR CARROS
 				try {
 					double tanque;
+					int anoFab, anoMod;
 					
-					carros.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
-					//testar leitura vazia ou só com espaços
-					carros.setModelo(JOptionPane.showInputDialog("Modelo"));
-					carros.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação"));
-					carros.setAnoModelo(JOptionPane.showInputDialog("Ano modelo"));
-					carros.setMotorizacao(JOptionPane.showInputDialog("Motorização"));
-					carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos"));
-					carros.setCor(JOptionPane.showInputDialog("Cor "));
-					carros.setPlaca(JOptionPane.showInputDialog("Placa "));
-					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
+					carros.setMarca(JOptionPane.showInputDialog("Marca do carro:"));	
+					carros.setModelo(JOptionPane.showInputDialog("Modelo:"));
+					anoFab = Integer.parseInt(JOptionPane.showInputDialog("Ano de Fabricacao:"));
+					carros.setAnoFabricacao(anoFab);
+					anoMod = Integer.parseInt(JOptionPane.showInputDialog("Ano do modelo:"));
+					carros.setAnoModelo(anoMod);
+					carros.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
+					carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
+					carros.setCor(JOptionPane.showInputDialog("Cor:"));
+					carros.setPlaca(JOptionPane.showInputDialog("Placa:"));
+					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
 					carros.setCapacidadeTanque(tanque);
 					carro.addAll(carro);
 				}
@@ -125,18 +127,16 @@ public class Main  {
 						break;
 						
 
-						
 						default:
 							JOptionPane.showMessageDialog(null," Digite um numero válido!");
-						
 						}
-	}
+					}
 					
 					catch( NumberFormatException f) {
+						JOptionPane.showMessageDialog(null	,"Digite um valor valido");
+					
+					}catch(Exception e){
 						JOptionPane.showMessageDialog(null	,"Digite um valor");
-					}
-					catch(Exception e){
-						JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
 						opcaoRelatorio= Integer.parseInt(JOptionPane.showInputDialog(GERAR_RELATORIO));
 					}
 					
@@ -151,10 +151,10 @@ public class Main  {
 		}
 		
 		catch( NumberFormatException f) {
-			JOptionPane.showMessageDialog(null	,"Digite um valor");
+			JOptionPane.showMessageDialog(null	,"Digite um valor valido");
 		}
 		catch(Exception e){
-			JOptionPane.showMessageDialog(null	,"Digite um valor válido");
+			JOptionPane.showMessageDialog(null	,"Digite um valor");
 			
 		}
 		
