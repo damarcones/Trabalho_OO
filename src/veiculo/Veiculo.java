@@ -28,7 +28,7 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return marca;
 	}
 
-	public void setMarca(String marca) throws DescricaoEmBrancoException{                //trim().equalsIgnoreCase= remove espaço
+	public void setMarca(String marca) throws DescricaoEmBrancoException{                //trim().equalsIgnoreCase= remove espaÃ§o
 		
 		try {
 			if(marca.trim().equalsIgnoreCase("")||marca.isEmpty()||marca == null) {
@@ -47,8 +47,17 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return modelo;
 	}
 
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setModelo(String modelo)throws DescricaoEmBrancoException {
+		try {
+			if(modelo.trim().equalsIgnoreCase("")||modelo.isEmpty()||modelo == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.modelo = modelo.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////ANO DE FABRICACAO//////////////////////////////////////
