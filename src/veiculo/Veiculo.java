@@ -201,7 +201,7 @@ public class Veiculo extends DescricaoEmBrancoException  {
 	public void setCapacidadeTanque(double capacidadeTanque)  throws DescricaoEmBrancoException {
 		
 		try {
-			if(capacidadeTanque.equalsIgnoreCase("")||capacidadeTanque == null) {
+			if(capacidadeTanque == 0.0) {
 				throw new DescricaoEmBrancoException();
 			}
 			this.capacidadeTanque = capacidadeTanque;

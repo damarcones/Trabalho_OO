@@ -29,9 +29,9 @@ public class Main  {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Set<Veiculo> carro =  new HashSet<Veiculo>();
+	//	Set<Veiculo> carro =  new HashSet<Veiculo>();
 		
-		Veiculo carros = new Veiculo();	
+		Veiculo carros = new Veiculo();
 		
 		int opcaoMenu = -1;
 		
@@ -46,7 +46,6 @@ public class Main  {
 				try {
 					double tanque;
 					
-<<<<<<< HEAD
 					carros.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
 					//testar leitura vazia ou só com espaços
 					carros.setModelo(JOptionPane.showInputDialog("Modelo"));
@@ -58,38 +57,24 @@ public class Main  {
 					carros.setPlaca(JOptionPane.showInputDialog("Placa "));
 					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
 					carros.setCapacidadeTanque(tanque);
-					carro.addAll(carro);
+					//carro.addAll(carro);
+				}
+				catch(NumberFormatException e) {
+					JOptionPane.showMessageDialog(null	,"Digite um valor v�lido!");
 				}
 				catch(Exception e){
-				JOptionPane.showMessageDialog(null,e);
-				e.fillInStackTrace();
-=======
-					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
-					carro.setCapacidadeTanque(tanque);
-					carro.setMarca(JOptionPane.showInputDialog("Marca do carro:"));
-					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo:"));
-					carro.setModelo(JOptionPane.showInputDialog("Modelo:"));
-					carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação:"));
-					carro.setAnoModelo(JOptionPane.showInputDialog("Ano do modelo:"));
-					carro.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
-					carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
-					carro.setCor(JOptionPane.showInputDialog("Cor:"));
-					carro.setPlaca(JOptionPane.showInputDialog("Placa:"));
-
-				}catch(NumberFormatException f) {
-					JOptionPane.showMessageDialog(null	,"Digite um valor v�lido!");
->>>>>>> 91a8f4346492526c1b07c027840351dc99ecf045
-				
-				}catch(Exception e){
 					JOptionPane.showMessageDialog(null,e);
+					e.fillInStackTrace();
 				}
-<<<<<<< HEAD
-=======
-//				}catch(Exception vi) {
-//					JOptionPane.showMessageDialog(null, vi);
+				
+//				}catch(Exception e){
+//					JOptionPane.showMessageDialog(null,e);
+//				}
+//				}catch(Exception e) {
+//					JOptionPane.showMessageDialog(null, e);
 //					
 //				}
->>>>>>> 91a8f4346492526c1b07c027840351dc99ecf045
+
 				
 			break;
 			case 2: //REGISTRAR DESPESAS
@@ -169,9 +154,11 @@ public class Main  {
 				
 				default:
 					JOptionPane.showMessageDialog(null," Digite um numero válido!");
+				break;
 					
 				}
 		}
+		
 		catch( NumberFormatException f) {
 			JOptionPane.showMessageDialog(null	,"Digite um valor");
 		}
@@ -182,10 +169,12 @@ public class Main  {
 		
 
 		}while(opcaoMenu != 0);
-		JOptionPane.showMessageDialog(null,carro);
+		//JOptionPane.showMessageDialog(null,carro);
 		JOptionPane.showMessageDialog(null,"Programa Finalizado com Sucesso!\n");
-		}
+		
+	
 
 }
 
 
+}
