@@ -12,8 +12,17 @@ public class RegistrarTaxa extends Despesa{
         return CategoriaTaxa;
     }
 
-    public void setCategoriaTaxa(String CategoriaTaxa) {
-        this.CategoriaTaxa = CategoriaTaxa;
+    public void setCategoriaTaxa(String CategoriaTaxa) throws DescricaoEmBrancoException {
+    	try {
+			if(CategoriaTaxa.trim().equalsIgnoreCase("")||CategoriaTaxa.isEmpty()||CategoriaTaxa == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.CategoriaTaxa = CategoriaTaxa.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
     }
     
     
