@@ -103,7 +103,7 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return motorizacao;
 	}
 
-	public void setMotorizacao(String motorizacao) throws DescricaoEmBrancoException {
+	public void setMotorizacao(String motorizacao) throws DescricaoEmBrancoException{
 		
 		try {
 			if(motorizacao.trim().equalsIgnoreCase("")||motorizacao.isEmpty()||motorizacao == null) {
@@ -112,8 +112,8 @@ public class Veiculo extends DescricaoEmBrancoException  {
 			this.motorizacao = motorizacao.trim();
 		
 		}
-		catch(DescricaoEmBrancoException e) {
-			throw e;
+		catch(DescricaoEmBrancoException f) {
+			throw f;
 		}
 	}
 
@@ -198,18 +198,19 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return capacidadeTanque;
 	}
 
-	public void setCapacidadeTanque(double capacidadeTanque)  throws DescricaoEmBrancoException {
+	public void setCapacidadeTanque(double capacidadeTanque)  throws DescricaoEmBrancoException, ValorInvalidoException{
 		
 		try {
-			if(capacidadeTanque == 0.0) {
-				throw new DescricaoEmBrancoException();
+			if(capacidadeTanque <= 0.0) {
+				throw new ValorInvalidoException();
 			}
 			this.capacidadeTanque = capacidadeTanque;
 		
 		}
-		catch(DescricaoEmBrancoException e) {
-			throw e;
+		catch(ValorInvalidoException f) {
+			throw f;
 		}
+		
 	}
 
 //*******************************************************************

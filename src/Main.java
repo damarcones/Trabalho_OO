@@ -29,7 +29,7 @@ public class Main  {
 	
 	public static void main(String[] args) throws Exception {
 		
-	//	Set<Veiculo> carro =  new HashSet<Veiculo>();
+		Set<Veiculo> carro =  new HashSet<Veiculo>();
 		
 		Veiculo carros = new Veiculo();
 		
@@ -57,24 +57,15 @@ public class Main  {
 					carros.setPlaca(JOptionPane.showInputDialog("Placa "));
 					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
 					carros.setCapacidadeTanque(tanque);
-					//carro.addAll(carro);
+					carro.addAll(carro);
 				}
 				catch(NumberFormatException e) {
-					JOptionPane.showMessageDialog(null	,"Digite um valor v�lido!");
+					JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
 				}
 				catch(Exception e){
 					JOptionPane.showMessageDialog(null,e);
-					e.fillInStackTrace();
 				}
 				
-//				}catch(Exception e){
-//					JOptionPane.showMessageDialog(null,e);
-//				}
-//				}catch(Exception e) {
-//					JOptionPane.showMessageDialog(null, e);
-//					
-//				}
-
 				
 			break;
 			case 2: //REGISTRAR DESPESAS
