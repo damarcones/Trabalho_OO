@@ -18,14 +18,17 @@ public class Main  {
 			"3) Taxas;\n"+
 			"0) Sair.\n"+
 			"Escolha uma opcao:\n";
+	
 	private final static String GERAR_RELATORIO = "GERAR RELATORIO\n"+
 			"1) Desempenho;\n"+
 			"2) Consumo;\n"+
 			"0) Sair.\n"+
 			"Escolha uma opcao:\n";
 	
+	private final static String REGISTRAR_TAXA = "REGISTRAR TAXA\n"+
+			"Exemplos de taxas: DPVAT/Seguro/\n"+
+			"Licenciamento/IPVA/Financiamento\n";
 
-	
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -89,6 +92,7 @@ public class Main  {
 						
 						case 3:
 							//REGISTAR TAXA(IMPOSTO, SEGURO, ETC)
+							opcaoMenu = Integer.parseInt(JOptionPane.showInputDialog(REGISTRAR_TAXA));
 						break;
 						
 						default:
@@ -165,7 +169,7 @@ public class Main  {
 		
 	
 
-}
+	}
 
 
 }
