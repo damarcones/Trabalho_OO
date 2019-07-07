@@ -7,8 +7,8 @@ public class ValorInvalidoException extends Exception {
 		
 	}
 	
-	public ValorInvalidoException(String m) {
-		this.mensagem = m;
+	public ValorInvalidoException(String mensagem) {
+		this.mensagem = mensagem;
 
 	}
 	

@@ -18,17 +18,17 @@ public class Veiculo extends DescricaoEmBrancoException  {
 	private ArrayList <Despesa> despesas;
 	
 
-	public Veiculo() throws DescricaoEmBrancoException {
+	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
 		despesas = new ArrayList();
 	}
+	
 ///////////////////////////////////MARCA//////////////////////////////////////
 	public String getMarca() {
-	
 		return marca;
 	}
 
-	public void setMarca(String marca) throws DescricaoEmBrancoException{                //trim().equalsIgnoreCase= remove espaço
+	public void setMarca(String marca) throws DescricaoEmBrancoException{
 		
 		try {
 			if(marca.trim().equalsIgnoreCase("")||marca.isEmpty()||marca == null) {
@@ -65,8 +65,18 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return anoFabricacao;
 	}
 
-	public void setAnoFabricacao(String anoFabricacao) {
-		this.anoFabricacao = anoFabricacao;
+	public void setAnoFabricacao(String anoFabricacao) throws DescricaoEmBrancoException{
+		
+		try {
+			if(anoFabricacao.trim().equalsIgnoreCase("")||anoFabricacao.isEmpty()||anoFabricacao == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.anoFabricacao = anoFabricacao.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////ANO DO MODELO//////////////////////////////////////
@@ -74,8 +84,18 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return anoModelo;
 	}
 
-	public void setAnoModelo(String anoModelo) {
-		this.anoModelo = anoModelo;
+	public void setAnoModelo(String anoModelo)  throws DescricaoEmBrancoException {
+		
+		try {
+			if(anoModelo.trim().equalsIgnoreCase("")||anoModelo.isEmpty()||anoModelo == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.anoModelo = anoModelo.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////MOTORIZACAO//////////////////////////////////////
@@ -83,8 +103,18 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return motorizacao;
 	}
 
-	public void setMotorizacao(String motorizacao) {
-		this.motorizacao = motorizacao;
+	public void setMotorizacao(String motorizacao) throws DescricaoEmBrancoException {
+		
+		try {
+			if(motorizacao.trim().equalsIgnoreCase("")||motorizacao.isEmpty()||motorizacao == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.motorizacao = motorizacao.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////COMBUSTIVEIS//////////////////////////////////////
@@ -92,8 +122,18 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return combustiveis;
 	}
 
-	public void setCombustiveis(String cobustiveis) {
-		this.combustiveis = cobustiveis;
+	public void setCombustiveis(String combustiveis) throws DescricaoEmBrancoException {
+		
+		try {
+			if(combustiveis.trim().equalsIgnoreCase("")||combustiveis.isEmpty()||combustiveis == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.combustiveis = combustiveis.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////COR//////////////////////////////////////
@@ -101,8 +141,18 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return cor;
 	}
 
-	public void setCor(String cor) {
-		this.cor = cor;
+	public void setCor(String cor) throws DescricaoEmBrancoException {
+		
+		try {
+			if(cor.trim().equalsIgnoreCase("")||cor.isEmpty()||cor == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.cor = cor.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////PLACA//////////////////////////////////////
@@ -110,8 +160,18 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return placa;
 	}
 
-	public void setPlaca(String placa) {
-		this.placa = placa;
+	public void setPlaca(String placa) throws DescricaoEmBrancoException {
+		
+		try {
+			if(placa.trim().equalsIgnoreCase("")||placa.isEmpty()||placa == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.placa = placa.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////RENAVAM//////////////////////////////////////
@@ -119,8 +179,18 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return renavam;
 	}
 
-	public void setRenavam(String renavam) {
-		this.renavam = renavam;
+	public void setRenavam(String renavam) throws DescricaoEmBrancoException {
+		
+		try {
+			if(renavam.trim().equalsIgnoreCase("")||renavam.isEmpty()||renavam == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.renavam = renavam.trim();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
 ///////////////////////////////////CAPACIDADE DO TANQUE//////////////////////////////////////
@@ -128,14 +198,22 @@ public class Veiculo extends DescricaoEmBrancoException  {
 		return capacidadeTanque;
 	}
 
-	public void setCapacidadeTanque(double capacidadeTanque) {
-		this.capacidadeTanque = capacidadeTanque;
+	public void setCapacidadeTanque(double capacidadeTanque)  throws DescricaoEmBrancoException {
+		
+		try {
+			if(capacidadeTanque.equalsIgnoreCase("")||capacidadeTanque == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.capacidadeTanque = capacidadeTanque;
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
 	}
 
-///////////////////////////////////MARCA//////////////////////////////////////
+//*******************************************************************
 	public void addDespesa(Despesa d) {
 		this.despesas.add(d);
-	}
-	
-	
+	}	
 }
