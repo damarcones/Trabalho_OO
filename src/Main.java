@@ -5,24 +5,24 @@ import java.util.*;
 
 public class Main  {
 	
-	private final static String MENU_INICIAL = "MENU DE OPÇÕES\n"+ 
-			"1) Cadastrar Veículo;\n"+
+	private final static String MENU_INICIAL = "MENU DE OPCOES\n"+ 
+			"1) Cadastrar Veiculo;\n"+
 			"2) Registrar Despesa;\n"+
-			"3) Gerar Relatório;\n"+
+			"3) Gerar Relatorio;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opção:\n";
+			"Escolha uma opcao:\n";
 	
 	private final static String MENU_DESPESA = "REGISTRAR DESPESA\n"+
 			"1) Abastecimento;\n"+
-			"2) Manutençao;\n"+
+			"2) Manutencao;\n"+
 			"3) Taxas;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opção:\n";
-	private final static String GERAR_RELATORIO = "GERAR RELATÓRIO\n"+
+			"Escolha uma opcao:\n";
+	private final static String GERAR_RELATORIO = "GERAR RELATORIO\n"+
 			"1) Desempenho;\n"+
 			"2) Consumo;\n"+
 			"0) Sair.\n"+
-			"Escolha uma opção:\n";
+			"Escolha uma opcao:\n";
 	
 
 	
@@ -46,6 +46,7 @@ public class Main  {
 				try {
 					double tanque;
 					
+<<<<<<< HEAD
 					carros.setMarca(JOptionPane.showInputDialog("Marca do carro"));	
 					//testar leitura vazia ou só com espaços
 					carros.setModelo(JOptionPane.showInputDialog("Modelo"));
@@ -62,8 +63,33 @@ public class Main  {
 				catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
 				e.fillInStackTrace();
+=======
+					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
+					carro.setCapacidadeTanque(tanque);
+					carro.setMarca(JOptionPane.showInputDialog("Marca do carro:"));
+					carro.setModelo(JOptionPane.showInputDialog("Marca do Modelo:"));
+					carro.setModelo(JOptionPane.showInputDialog("Modelo:"));
+					carro.setAnoFabricacao(JOptionPane.showInputDialog("Ano de Fabricação:"));
+					carro.setAnoModelo(JOptionPane.showInputDialog("Ano do modelo:"));
+					carro.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
+					carro.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
+					carro.setCor(JOptionPane.showInputDialog("Cor:"));
+					carro.setPlaca(JOptionPane.showInputDialog("Placa:"));
+
+				}catch(NumberFormatException f) {
+					JOptionPane.showMessageDialog(null	,"Digite um valor v�lido!");
+>>>>>>> 91a8f4346492526c1b07c027840351dc99ecf045
 				
+				}catch(Exception e){
+					JOptionPane.showMessageDialog(null,e);
 				}
+<<<<<<< HEAD
+=======
+//				}catch(Exception vi) {
+//					JOptionPane.showMessageDialog(null, vi);
+//					
+//				}
+>>>>>>> 91a8f4346492526c1b07c027840351dc99ecf045
 				
 			break;
 			case 2: //REGISTRAR DESPESAS
