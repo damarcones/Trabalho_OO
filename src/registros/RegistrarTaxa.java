@@ -1,9 +1,10 @@
 package registros;
+import excecoes.*;
 
 public class RegistrarTaxa extends Despesa{
     private String CategoriaTaxa;
     
-    public void RegistroTaxa(){
+    public void RegistroTaxa() throws DescricaoEmBrancoException{
         
     }
 

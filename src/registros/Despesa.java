@@ -7,7 +7,6 @@ public class Despesa {
     private String data;
     private double valorTotal;
     
-    
     public void Despesas() throws DescricaoEmBrancoException{
         
     }
