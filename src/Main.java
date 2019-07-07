@@ -57,7 +57,7 @@ public class Main  {
 					carros.setPlaca(JOptionPane.showInputDialog("Placa "));
 					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque"));
 					carros.setCapacidadeTanque(tanque);
-					carro.addAll(carro);
+				//	carro.addAll(carros);
 				}
 				catch(NumberFormatException e) {
 					JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
