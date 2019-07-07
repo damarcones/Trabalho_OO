@@ -206,6 +206,7 @@ public class Veiculo extends DescricaoEmBrancoException  {
 			}
 			this.capacidadeTanque = capacidadeTanque;
 		
+			
 		}
 		catch(ValorInvalidoException f) {
 			throw f;
