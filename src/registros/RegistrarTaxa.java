@@ -42,7 +42,7 @@ public class RegistrarTaxa extends Despesa{
 		
 		try {
 			taxa = new RegistrarTaxa(Despesa.init());
-			taxa.setCategoriaTaxa(JOptionPane.showInputDialog("Qual o tipo de taxa a ser registrada:"));
+			taxa.setCategoriaTaxa(JOptionPane.showInputDialog("A despesa é imposto ou particular?:"));
 			
 		}
 		catch(Exception e) {
@@ -53,7 +53,7 @@ public class RegistrarTaxa extends Despesa{
 	}
 	@Override
 	public String toString() {
-		return "RegistrarTaxa [CategoriaTaxa=" + CategoriaTaxa + ", toString()=" + super.toString() + "]";
+		return "RegistrarTaxa [CategoriaTaxa=" + CategoriaTaxa + ", \ntoString()=" + super.toString() + "]";
 	}
     
 }

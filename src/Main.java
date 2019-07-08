@@ -1,3 +1,5 @@
+//FAZER UMA OP��O PARA VER TODOS OS ABASTECIMENTOS
+
 import excecoes.*;
 import registros.RegistrarManutencao;
 import veiculo.Veiculo;
@@ -39,8 +41,7 @@ public class Main  {
 		ArrayList<Veiculo> veiculos= new ArrayList<>();
 		int opcaoMenu = -1;
 		
-		
-		
+			
 	while(true)		
 	{
 		int maisUmCarro = 1;

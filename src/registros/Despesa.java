@@ -2,16 +2,13 @@ package registros;
 import javax.swing.JOptionPane;
 import excecoes.*;
 
-import excecoes.*;
-
 public class Despesa {
     
 	private String nome;
     private String data;
     private double valorTotal;
     
-    public void Despesas() throws DescricaoEmBrancoException{
-        
+    public void Despesas() throws DescricaoEmBrancoException { 
     }
 
     	public String getNome() {
@@ -67,6 +64,7 @@ public class Despesa {
 public static Despesa init() {
     		Despesa despesas = null;
     		double valor;
+    		
     		
     		try {
     			despesas = new Despesa();
