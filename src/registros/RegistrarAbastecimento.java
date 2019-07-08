@@ -8,9 +8,31 @@ public class RegistrarAbastecimento extends Despesa {
     private boolean TanqueCheio;
 
 
-    public void Abastecimento() {
+public void Abaster(String TC, double VC, int KA, boolean TQ) {
+       try{
+           if(TC=="G"){
+               if(TQ==true){
+                   this.KmAtual=KA;
+                   this.TanqueCheio=TQ;
+                   this.TipoCombustivel=TC;
+                   this.ValorCombustivel=VC;
+               }else{
+               this.KmAtual=KA;
+               this.TanqueCheio=TQ;
+               this.TipoCombustivel=TC;
+               this.ValorCombustivel=VC;    
+               
+               }
+               
+           }else{
+               
+           }
+       }
+       catch(Exception e){
         
     }
+    }
+
 
     public String getTipoCombustivel() {
         return TipoCombustivel;
