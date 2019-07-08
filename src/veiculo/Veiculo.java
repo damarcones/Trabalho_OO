@@ -17,7 +17,7 @@ public class Veiculo extends Exception {
 	private String cor;
 	private String placa;
 	private String renavam;
-	private ArrayList <Despesa> despesas;
+	private ArrayList <Despesa> despesas = new ArrayList();
 	
 
 	public Veiculo() throws DescricaoEmBrancoException{
