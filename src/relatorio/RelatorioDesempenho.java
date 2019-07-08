@@ -1,6 +1,6 @@
 package relatorio;
-import registros.RegistrarAbastecimento;
-
+import registros.*;
+import excecoes.DoisTanqueCheioVerdadeiroException;
 
 public class RelatorioDesempenho {
    //private Desempenho.Abastecimento
@@ -10,8 +10,21 @@ public class RelatorioDesempenho {
     private int KmAnterior;
     private double valor;
     
-    public void MediaConsumo(){
-        
+    public void MediaConsumo(RegistrarAbastecimento atual, RegistrarAbastecimento anterior) throws DoisTanqueCheioVerdadeiroException{
+    	try {
+    		if(atual.getTanqueCheio() && anterior.getTanqueCheio()){
+	    		setKmAtual(atual.getKmAtual());
+	    		setKmAnterior(anterior.getKmAtual());
+	    		int kmRodados = this.KmAtual - this.KmAnterior;
+	    		setKmLitro(kmRodados/atual.getValorTotal());
+	    	}
+    		else{
+    			throw new DoisTanqueCheioVerdadeiroException();
+    		}
+    	}catch(DoisTanqueCheioVerdadeiroException e) {
+    		throw e;
+    	}
+    	
     }
 
     public double getKmLitro() {
