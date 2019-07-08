@@ -5,7 +5,7 @@ import java.util.*;
 
 import javax.swing.JOptionPane;
 
-public class Veiculo extends Exception {
+public class Veiculo{
 	
 	private String marca;
 	private String modelo;
@@ -221,10 +221,10 @@ public class Veiculo extends Exception {
 
 	public String toString() {
 		return "Veiculo [Marca: " + marca + ", \nModelo: " + modelo + ", \nAno de fabricacao: " + anoFabricacao
-				+ ", \nAno do modelo: " + anoModelo + ", Motorizacao: " + motorizacao
-				+ ", Capacidade do tanque: " + capacidadeTanque + ", Combustiveis aceitos: " + combustiveis
-				+ ", Cor: " + cor + ", Placa: " + placa + ", Renavam: " + renavam
-				+ ", Despesas: " + despesas + "]";
+				+ ", \nAno do modelo: " + anoModelo + ", \nMotorizacao: " + motorizacao
+				+ ", \nCapacidade do tanque: " + capacidadeTanque + ", \nCombustiveis aceitos: " + combustiveis
+				+ ", \nCor: " + cor + ", \nPlaca: " + placa + ", \nRenavam: " + renavam
+				+ ", \nDespesas: " + despesas + "]";
 	}
 	
 	
@@ -256,6 +256,5 @@ public class Veiculo extends Exception {
 		
 		return carros;
 	}
-	
 	
 }

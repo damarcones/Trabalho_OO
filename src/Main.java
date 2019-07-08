@@ -1,7 +1,9 @@
 import excecoes.*;
+import registros.RegistrarManutencao;
 import veiculo.Veiculo;
 import javax.swing.*;
 import java.util.*;
+import registros.*;
 
 public class Main  {
 	
@@ -70,6 +72,7 @@ public class Main  {
 
 			
 					veiculos.add(Veiculo.init());
+					
 					JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
 
 				}
@@ -96,11 +99,17 @@ public class Main  {
 						
 						case 2:
 							//REGISTRAR MANUTENÇÃO
+							veiculos.get(veiculos.size() -1).addDespesa(RegistrarManutencao.init());
+
+							JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
 						break;
 						
 						case 3:
 							//REGISTAR TAXA(IMPOSTO, SEGURO, ETC)
-							opcaoMenu = Integer.parseInt(JOptionPane.showInputDialog(REGISTRAR_TAXA));
+							//JOptionPane.showMessageDialog(null,REGISTRAR_TAXA);
+							veiculos.get(veiculos.size() -1).addDespesa(RegistrarTaxa.init());
+							JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
+							
 						break;
 						
 						default:

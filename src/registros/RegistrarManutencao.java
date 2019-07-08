@@ -7,12 +7,24 @@ public class RegistrarManutencao extends Despesa{
     private int kmAtual;
 
     public RegistrarManutencao() throws DescricaoEmBrancoException {
+    	
     }
 
+    public RegistrarManutencao(Despesa d) {
+    
+    	try{
+    		setData(d.getData());
+    		setNome(d.getNome());
+    		setValorTotal(d.getValorTotal());
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    
+    }
     	public int getKmAtual() {
     		return kmAtual;
     	}
-
     	public void setKmAtual(int kmAtual) throws DescricaoEmBrancoException {
     		try {
     			if(kmAtual == 0) {
@@ -29,8 +41,8 @@ public class RegistrarManutencao extends Despesa{
     		RegistrarManutencao manutencao = null;
     		int km;
     		try {
-    			manutencao = new RegistrarManutencao();
-    			km = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor"));
+    			manutencao = new RegistrarManutencao(Despesa.init());
+    			km = Integer.parseInt(JOptionPane.showInputDialog("Informe o Km atual"));
     			manutencao.setKmAtual(km);
     		}
     		catch(Exception e) {
@@ -39,5 +51,12 @@ public class RegistrarManutencao extends Despesa{
     		
     		return manutencao;
     	}
+
+		@Override
+		public String toString() {
+			return "RegistrarManutencao [kmAtual=" + kmAtual + ", toString()=" + super.toString() + "]";
+		}
+
+		
     
 }
