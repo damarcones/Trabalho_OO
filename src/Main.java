@@ -1,4 +1,4 @@
-//FAZER UMA OP��O PARA VER TODOS OS ABASTECIMENTOS
+//FAZER UMA OPCAO PARA VER TODOS OS ABASTECIMENTOS
 
 import excecoes.*;
 import registros.RegistrarManutencao;

@@ -52,11 +52,8 @@ public class RegistrarManutencao extends Despesa{
     		return manutencao;
     	}
 
-		@Override
 		public String toString() {
-			return "RegistrarManutencao [kmAtual=" + kmAtual + ", toString()=" + super.toString() + "]";
-		}
-
-		
-    
+		return "RegistrarManutencao [Quilometragem atual: " + kmAtual + ","
+									+ "toString()=" + super.toString() + "]";
+		} 
 }

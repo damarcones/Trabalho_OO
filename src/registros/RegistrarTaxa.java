@@ -32,28 +32,26 @@ public class RegistrarTaxa extends Despesa{
 			}
 			this.CategoriaTaxa = CategoriaTaxa.trim();
 		
-		}
-		catch(DescricaoEmBrancoException e) {
+		} catch(DescricaoEmBrancoException e) {
 			throw e;
 		}
+    	
     }
     public static RegistrarTaxa init() {
 		RegistrarTaxa taxa = null;
 		
 		try {
 			taxa = new RegistrarTaxa(Despesa.init());
-			taxa.setCategoriaTaxa(JOptionPane.showInputDialog("A despesa é imposto ou particular?:"));
+			taxa.setCategoriaTaxa(JOptionPane.showInputDialog("A despesa é imposto ou particular?: "));
 			
-		}
-		catch(Exception e) {
+		} catch(Exception e) {
 			JOptionPane.showMessageDialog(null,e);
-		}
 		
-		return taxa;
+		}return taxa;
 	}
-	@Override
+
 	public String toString() {
-		return "RegistrarTaxa [CategoriaTaxa=" + CategoriaTaxa + ", \ntoString()=" + super.toString() + "]";
+		return "RegistrarTaxa [Categoria da Taxa: " + CategoriaTaxa + ","
+							+ "\ntoString()=" + super.toString() + "]";
 	}
-    
 }

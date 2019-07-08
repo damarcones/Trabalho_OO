@@ -66,11 +66,10 @@ public void Abaster(String TC, double VC, int KA, boolean TQ) {
         this.TanqueCheio = TanqueCheio;
     }
 
-	@Override
-	public String toString() {
-		return "RegistrarAbastecimento [TipoCombustivel=" + TipoCombustivel + ", ValorCombustivel=" + ValorCombustivel
-				+ ", KmAtual=" + KmAtual + ", TanqueCheio=" + TanqueCheio + "]";
-	}
-    
-
+		public String toString() {
+			return "RegistrarAbastecimento [TipoCombustivel=" + TipoCombustivel + ","
+											+ "ValorCombustivel=" + ValorCombustivel + ","
+											+ "KmAtual=" + KmAtual + ","
+											+ "TanqueCheio=" + TanqueCheio + "]";
+		}
 }
