@@ -1,3 +1,5 @@
+//FAZER UMA OPÇÃO PARA VER TODOS OS ABASTECIMENTOS
+
 import excecoes.*;
 import veiculo.Veiculo;
 import javax.swing.*;
@@ -37,8 +39,7 @@ public class Main  {
 		ArrayList<Veiculo> veiculos= new ArrayList<>();
 		int opcaoMenu = -1;
 		
-		
-		
+			
 	while(true)		
 	{
 		int maisUmCarro = 1;
