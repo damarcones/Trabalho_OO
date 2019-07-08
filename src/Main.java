@@ -67,10 +67,11 @@ public class Main  {
 				break;
 			case 1: // REGISTRAR CARROS
 				try {
+
 			
 					veiculos.add(Veiculo.init());
 					JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
-					
+
 				}
 				catch(NumberFormatException e) {
 					JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
@@ -174,9 +175,6 @@ public class Main  {
 		}
 		//JOptionPane.showMessageDialog(null,carro);
 		JOptionPane.showMessageDialog(null,"Programa Finalizado com Sucesso!\n");
-		
-	
-
 	}
 
 

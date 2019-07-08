@@ -50,5 +50,5 @@ public class RegistrarAbastecimento extends Despesa {
 				+ ", KmAtual=" + KmAtual + ", TanqueCheio=" + TanqueCheio + "]";
 	}
     
-	public 
+
 }
