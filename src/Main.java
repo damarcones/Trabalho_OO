@@ -32,13 +32,33 @@ public class Main  {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Set<Veiculo> carro =  new HashSet<Veiculo>();
+	//	arrayList<Veiculo> carro =  new arrayList<Veiculo>();
 		
-		Veiculo carros = new Veiculo();
-		
+		ArrayList<Veiculo> veiculos= new ArrayList<>();
 		int opcaoMenu = -1;
 		
-		do {
+		
+		
+	while(true)		
+	{
+		int maisUmCarro = 1;
+//		1 == não
+//		0 == sim
+//		-1 == fechar
+		
+		Veiculo carros= new Veiculo();
+		try 		
+		{
+			maisUmCarro = JOptionPane.showConfirmDialog(null, "Você quer adicionar mais carro?", "Adicionar Veiculo",JOptionPane.YES_NO_OPTION);
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if(maisUmCarro == 1|| maisUmCarro == -1)
+			break;
+
+		do{
 		try {
 			opcaoMenu = Integer.parseInt(JOptionPane.showInputDialog(MENU_INICIAL));
 			
@@ -47,22 +67,28 @@ public class Main  {
 				break;
 			case 1: // REGISTRAR CARROS
 				try {
-					double tanque;
-					int anoFab, anoMod;
+//					double tanque;
+//					int anoFab, anoMod;
+//					
+//					carros.setMarca(JOptionPane.showInputDialog("Marca do carro:"));	
+//					carros.setModelo(JOptionPane.showInputDialog("Modelo:"));
+//					anoFab = Integer.parseInt(JOptionPane.showInputDialog("Ano de Fabricacao:"));
+//					carros.setAnoFabricacao(anoFab);
+//					anoMod = Integer.parseInt(JOptionPane.showInputDialog("Ano do modelo:"));
+//					carros.setAnoModelo(anoMod);
+//					carros.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
+//					carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
+//					carros.setCor(JOptionPane.showInputDialog("Cor:"));
+//					carros.setPlaca(JOptionPane.showInputDialog("Placa:"));
+//					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
+//					carros.setCapacidadeTanque(tanque);
+//					carros.setRenavam(JOptionPane.showInputDialog("Renavam:"));
+					//carro.addAll(carros);
+//					System.out.println(carros.toString()); ok
 					
-					carros.setMarca(JOptionPane.showInputDialog("Marca do carro:"));	
-					carros.setModelo(JOptionPane.showInputDialog("Modelo:"));
-					anoFab = Integer.parseInt(JOptionPane.showInputDialog("Ano de Fabricacao:"));
-					carros.setAnoFabricacao(anoFab);
-					anoMod = Integer.parseInt(JOptionPane.showInputDialog("Ano do modelo:"));
-					carros.setAnoModelo(anoMod);
-					carros.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
-					carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
-					carros.setCor(JOptionPane.showInputDialog("Cor:"));
-					carros.setPlaca(JOptionPane.showInputDialog("Placa:"));
-					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
-					carros.setCapacidadeTanque(tanque);
-				//	carro.addAll(carros);
+					veiculos.add(Veiculo.init());
+					System.out.println(veiculos.get(veiculos.size() -1).toString());
+					
 				}
 				catch(NumberFormatException e) {
 					JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
@@ -70,7 +96,6 @@ public class Main  {
 				catch(Exception e){
 					JOptionPane.showMessageDialog(null,e);
 				}
-				
 				
 			break;
 			case 2: //REGISTRAR DESPESAS
@@ -162,8 +187,9 @@ public class Main  {
 			
 		}
 		
-
 		}while(opcaoMenu != 0);
+//		Fim do switch
+		}
 		//JOptionPane.showMessageDialog(null,carro);
 		JOptionPane.showMessageDialog(null,"Programa Finalizado com Sucesso!\n");
 		

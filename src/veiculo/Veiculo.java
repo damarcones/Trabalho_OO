@@ -3,6 +3,8 @@ import excecoes.*;
 import registros.*;
 import java.util.*;
 
+import javax.swing.JOptionPane;
+
 public class Veiculo extends Exception {
 	
 	private String marca;
@@ -215,5 +217,44 @@ public class Veiculo extends Exception {
 //*******************************************************************
 	public void addDespesa(Despesa d) {
 		this.despesas.add(d);
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "Veiculo [marca=" + marca + ", modelo=" + modelo + ", anoFabricacao=" + anoFabricacao + ", anoModelo="
+				+ anoModelo + ", motorizacao=" + motorizacao + ", capacidadeTanque=" + capacidadeTanque
+				+ ", combustiveis=" + combustiveis + ", cor=" + cor + ", placa=" + placa + ", renavam=" + renavam
+				+ ", despesas=" + despesas + "]";
+	}
+	
+	public static Veiculo init() {
+		Veiculo carros  = null;
+		double tanque;
+		int anoFab, anoMod;
+		try {
+		carros = new Veiculo();
+		carros.setMarca(JOptionPane.showInputDialog("Marca do carro:"));	
+		carros.setModelo(JOptionPane.showInputDialog("Modelo:"));
+		anoFab = Integer.parseInt(JOptionPane.showInputDialog("Ano de Fabricacao:"));
+		carros.setAnoFabricacao(anoFab);
+		anoMod = Integer.parseInt(JOptionPane.showInputDialog("Ano do modelo:"));
+		carros.setAnoModelo(anoMod);
+		carros.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
+		carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
+		carros.setCor(JOptionPane.showInputDialog("Cor:"));
+		carros.setPlaca(JOptionPane.showInputDialog("Placa:"));
+		tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
+		carros.setCapacidadeTanque(tanque);
+		carros.setRenavam(JOptionPane.showInputDialog("Renavam:"));
+		}catch(NumberFormatException e) {
+			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
+		}
+		catch(Exception e){
+			JOptionPane.showMessageDialog(null,e);
+		}
+		
+		return carros;
+	}
+	
+	
 }

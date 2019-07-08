@@ -1,4 +1,6 @@
 package registros;
+import javax.swing.JOptionPane;
+
 import excecoes.*;
 
 public class Despesa {
@@ -60,5 +62,17 @@ public class Despesa {
     		catch(ValorInvalidoException f) {
     			throw f;
     		}
-    	}     
+    	} 
+public static Despesa init() {
+    		Despesa despesas = null;
+    		
+    		try {}
+    		
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
+			}
+			catch(Exception e){
+				JOptionPane.showMessageDialog(null,e);
+			}
+    	}
 }
