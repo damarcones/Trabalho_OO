@@ -43,5 +43,12 @@ public class RegistrarAbastecimento extends Despesa {
     public void setTanqueCheio(boolean TanqueCheio) {
         this.TanqueCheio = TanqueCheio;
     }
+
+	@Override
+	public String toString() {
+		return "RegistrarAbastecimento [TipoCombustivel=" + TipoCombustivel + ", ValorCombustivel=" + ValorCombustivel
+				+ ", KmAtual=" + KmAtual + ", TanqueCheio=" + TanqueCheio + "]";
+	}
     
+	public 
 }

@@ -1,5 +1,6 @@
 package registros;
 import excecoes.*;
+import veiculo.Veiculo;
 
 public class RegistrarManutencao extends Despesa{
     private int kmAtual;
@@ -21,5 +22,7 @@ public class RegistrarManutencao extends Despesa{
     		catch(DescricaoEmBrancoException e) {
     			throw e;
     		}
-    	}  
+    	}
+    	
+    
 }
