@@ -67,27 +67,9 @@ public class Main  {
 				break;
 			case 1: // REGISTRAR CARROS
 				try {
-//					double tanque;
-//					int anoFab, anoMod;
-//					
-//					carros.setMarca(JOptionPane.showInputDialog("Marca do carro:"));	
-//					carros.setModelo(JOptionPane.showInputDialog("Modelo:"));
-//					anoFab = Integer.parseInt(JOptionPane.showInputDialog("Ano de Fabricacao:"));
-//					carros.setAnoFabricacao(anoFab);
-//					anoMod = Integer.parseInt(JOptionPane.showInputDialog("Ano do modelo:"));
-//					carros.setAnoModelo(anoMod);
-//					carros.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
-//					carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
-//					carros.setCor(JOptionPane.showInputDialog("Cor:"));
-//					carros.setPlaca(JOptionPane.showInputDialog("Placa:"));
-//					tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
-//					carros.setCapacidadeTanque(tanque);
-//					carros.setRenavam(JOptionPane.showInputDialog("Renavam:"));
-					//carro.addAll(carros);
-//					System.out.println(carros.toString()); ok
 					
 					veiculos.add(Veiculo.init());
-					System.out.println(veiculos.get(veiculos.size() -1).toString());
+					JOptionPane.showMessageDialog(null, veiculos.get(veiculos.size() -1).toString());
 					
 				}
 				catch(NumberFormatException e) {
@@ -192,9 +174,6 @@ public class Main  {
 		}
 		//JOptionPane.showMessageDialog(null,carro);
 		JOptionPane.showMessageDialog(null,"Programa Finalizado com Sucesso!\n");
-		
-	
-
 	}
 
 
