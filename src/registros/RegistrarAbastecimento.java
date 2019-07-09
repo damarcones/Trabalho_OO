@@ -6,47 +6,33 @@ public class RegistrarAbastecimento extends Despesa {
     private String TipoCombustivel;
     private double ValorCombustivel;
     private int KmAtual;
+    private int KmAnterior;
     private boolean TanqueCheio;
+    private boolean TanqueCheioAnterior;
     private double totalLitros;
+    private double kmLitro;
+    private double custoKm;
 
-    Despesa dep =new Despesa();
-    Veiculo ve;
-
-public void Abaster(String TC, double ValComb, int KA, boolean TQ,double ValorT) {
-       try{
-           if(TC==ve.getCombustiveis()){
-               if(ValorT!=0){
-                   if(KA>this.getKmAtual()){
-                       this.setKmAtual(KA);
-                       this.setValorCombustivel(ValComb);
-                       dep.setValorTotal(ValorT);
-                                     
-                                          
-                   }else{
-                       System.out.println("Valor da Km errado");
-                   }
-               }else{
-                   System.out.println("Valor nao pode ser zero");               
-               }
-               
-           }else{
-               System.out.println("Tipo de combustivel incopativel");
-           }
-       }
-       catch(Exception e){
-        
+    public RegistrarAbastecimento(Veiculo v) {
+        this.KmAnterior = v.getKmDoUltimoAbastecimento();
+        this.TanqueCheioAnterior = v.getTanqueDoUltimoAbastecimento();
     }
-    }
-
- 
-
 
     public String getTipoCombustivel() {
         return TipoCombustivel;
     }
 
     public void setTipoCombustivel(String TipoCombustivel) {
-        this.TipoCombustivel = TipoCombustivel;
+        try {
+			if(TipoCombustivel.trim().equalsIgnoreCase("")||TipoCombustivel.isEmpty()||TipoCombustivel == null) {
+				throw new DescricaoEmBrancoException();
+			}
+			this.TipoCombustivel = TipoCombustivel.trijavm();
+		
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
     }
 
     public double getValorCombustivel() {
@@ -54,7 +40,15 @@ public void Abaster(String TC, double ValComb, int KA, boolean TQ,double ValorT)
     }
 
     public void setValorCombustivel(double ValorCombustivel) {
-        this.ValorCombustivel = ValorCombustivel;
+        try {
+			if(ValorCombustivel <= 0.0) {
+				throw new ValorInvalidoException();
+			}
+			this.ValorCombustivel = ValorCombustivel;
+		}
+		catch(ValorInvalidoException f) {
+			throw f;
+		}
     }
 
     public int getKmAtual() {
@@ -62,7 +56,15 @@ public void Abaster(String TC, double ValComb, int KA, boolean TQ,double ValorT)
     }
 
     public void setKmAtual(int KmAtual) {
-        this.KmAtual = KmAtual;
+        try {
+			if(KmAtual <= KmAnterior) {
+				throw new ValorInvalidoException();
+			}
+            this.KmAtual = KmAtual;
+		}
+		catch(ValorInvalidoException f) {
+			throw f;
+		}
     }
 
     public boolean getTanqueCheio() {
@@ -73,7 +75,14 @@ public void Abaster(String TC, double ValComb, int KA, boolean TQ,double ValorT)
         this.TanqueCheio = TanqueCheio;
     }
 
-    
+    public void CosumoMedio(){
+        if(TanqueCheio && TanqueCheioAnterior){
+            int kmRodados = this.KmAtual - this.KmAnterior;
+            this.custoKm = kmRodados /* getValorTotal(); /* Eu não sei como chamar o valor total abastecido aqui*/
+            this.kmLitro = custoKm / ValorCombustivel;
+        }
+    }
+
     public String toString() {
     return "\n\nABASTECIMENTO:"
     		+ "Tipo do combustivel: " + TipoCombustivel
@@ -81,6 +90,5 @@ public void Abaster(String TC, double ValComb, int KA, boolean TQ,double ValorT)
 			+ "\nQuilometragem atual: " + KmAtual
 			+ "\nTanque cheio? " + TanqueCheio
 			+ super.toString();
-
 		}
 }
