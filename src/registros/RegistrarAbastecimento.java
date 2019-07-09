@@ -1,5 +1,6 @@
 package registros;
 import excecoes.*;
+import veiculo.Veiculo;
 
 public class RegistrarAbastecimento extends Despesa {
     private String TipoCombustivel;
@@ -7,31 +8,36 @@ public class RegistrarAbastecimento extends Despesa {
     private int KmAtual;
     private boolean TanqueCheio;
 
+    Despesa dep =new Despesa();
+    Veiculo ve;
 
-public void Abaster(String TC, double VC, int KA, boolean TQ) {
+public void Abaster(String TC, double ValComb, int KA, boolean TQ,double ValorT) {
        try{
-           if(TC=="G"){
-               if(TQ==true){
-                   this.KmAtual=KA;
-                   this.TanqueCheio=TQ;
-                   this.TipoCombustivel=TC;
-                   this.ValorCombustivel=VC;
+           if(TC==ve.getCombustiveis()){
+               if(ValorT!=0){
+                   if(KA>this.getKmAtual()){
+                       this.setKmAtual(KA);
+                       this.setValorCombustivel(ValComb);
+                       dep.setValorTotal(ValorT);
+                                     
+                                          
+                   }else{
+                       System.out.println("Valor da Km errado");
+                   }
                }else{
-               this.KmAtual=KA;
-               this.TanqueCheio=TQ;
-               this.TipoCombustivel=TC;
-               this.ValorCombustivel=VC;    
-               
+                   System.out.println("Valor nao pode ser zero");               
                }
                
            }else{
-               
+               System.out.println("Tipo de combustivel incopativel");
            }
        }
        catch(Exception e){
         
     }
     }
+
+ 
 
 
     public String getTipoCombustivel() {
@@ -66,6 +72,7 @@ public void Abaster(String TC, double VC, int KA, boolean TQ) {
         this.TanqueCheio = TanqueCheio;
     }
 
+<<<<<<< HEAD
 		public String toString() {
 			return "\nABASTECIMENTO:"
 					+ "\nTipo do combustivel: " + TipoCombustivel
@@ -73,5 +80,12 @@ public void Abaster(String TC, double VC, int KA, boolean TQ) {
 					+ "\nQuilometragem atual: " + KmAtual
 					+ "\nTanque cheio? " + TanqueCheio
 					+ "\n-------------------------------------";
+=======
+    public String toString() {
+    return "RegistrarAbastecimento [Tipo do combustivel: " + TipoCombustivel + ","
+        	+ "\nValor do combustivel: " + ValorCombustivel + ","
+			+ "\nQuilometragem atual: " + KmAtual + ","
+			+ "\nTanque cheio? " + TanqueCheio + "]";
+>>>>>>> a25f65cd92e47c84082a86c1d415af1cc4933169
 		}
 }
