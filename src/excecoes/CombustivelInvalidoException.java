@@ -10,6 +10,7 @@ public class CombustivelInvalidoException extends Exception {
 	}
 	
 	public String toString() {
-		return "Tipo de combustível inválido! Informe um combustível válido.";
+		return "Tipo de combustível inválido!\n"
+			+ "Informe um combustível válido.";
 	} 
 }

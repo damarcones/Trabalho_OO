@@ -1,3 +1,4 @@
+//RELATORIO QUE INFORMA TODAS AS DESPESAS DO VEICULO, DIVIDIDO PELO TOTAL DE KM RODADOS
 package relatorio;
 import registros.*;
 import excecoes.DoisTanqueCheioVerdadeiroException;
@@ -20,9 +21,9 @@ public class RelatorioCustoDoKmRodado {
 	    		setKmLitro(getCustoKm() / atual.getValorCombustivel()); /* Km por Litro é igual a Custo por Km, dividido pelo valor do ultimo abastecimento */
 	    	}
     		else{
-    			throw new DoisTanqueCheioVerdadeiroException();
+    			throw new DoisTanquesCheiosException();
     		}
-    	}catch(DoisTanqueCheioVerdadeiroException e) {
+    	}catch(DoisTanquesCheiosException e) {
     		throw e;
     	}
     	

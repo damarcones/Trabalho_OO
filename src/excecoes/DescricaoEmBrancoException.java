@@ -10,6 +10,7 @@ public class DescricaoEmBrancoException extends Exception {
 	}
 	
 	public String toString() {
-		return "Descrição em branco! Digite um valor.";
+		return "Descrição em branco!\n"
+				+ "Digite um valor.";
 	} 
 }
