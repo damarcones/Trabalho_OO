@@ -18,6 +18,8 @@ public class Veiculo{
 	private String placa;
 	private String renavam;
 	private ArrayList <Despesa> despesas = new ArrayList();
+        private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
+
 	
 
 	public Veiculo() throws DescricaoEmBrancoException{

@@ -10,22 +10,8 @@ public class RelatorioCustoDoKmRodado {
     private int KmAnterior;
     private double valor;
     
-    public void MediaConsumo(RegistrarAbastecimento atual, RegistrarAbastecimento anterior) throws DoisTanquesCheiosException{
-    	try {
-    		if(atual.getTanqueCheio() && anterior.getTanqueCheio()){
-	    		setKmAtual(atual.getKmAtual());
-	    		setKmAnterior(anterior.getKmAtual());
-	    		int kmRodados = this.KmAtual - this.KmAnterior;
-	    		setCustoKm(kmRodados / atual.getValorTotal()); /* Custo de Km rodados � igual a KmRodados divido pelo valor total do abastecimento */
-	    		setKmLitro(getCustoKm() / atual.getValorCombustivel()); /* Km por Litro � igual a Custo por Km, dividido pelo valor do ultimo abastecimento */
-	    	}
-    		else{
-    			throw new DoisTanquesCheiosException();
-    		}
-    	}catch(DoisTanquesCheiosException e) {
-    		throw e;
-    	}
-    	
+    public void MediaConsumo() throws DoisTanquesCheiosException{
+    
     }
 
     public double getKmLitro() {

@@ -1,6 +1,8 @@
 package registros;
 import javax.swing.JOptionPane;
 import excecoes.*;
+
+
 import veiculo.Veiculo;
 
 public class RegistrarAbastecimento extends Despesa {
@@ -9,7 +11,13 @@ public class RegistrarAbastecimento extends Despesa {
     private int KmAtual,KmAnterior;
     private boolean TanqueCheio;
     private double litros;
+    Veiculo v;
     
+    
+    public RegistrarAbastecimento()throws DescricaoEmBrancoException{
+   	 
+	}
+
 
 	public double getLitros() {
 		return litros;
@@ -29,9 +37,7 @@ public class RegistrarAbastecimento extends Despesa {
 	}
 
 
-	public RegistrarAbastecimento()throws DescricaoEmBrancoException{
-	 
-	}
+	
  
 
     public String getTipoCombustivel() {
@@ -43,7 +49,7 @@ public class RegistrarAbastecimento extends Despesa {
             if(TipoCombustivel.trim().equalsIgnoreCase("")||TipoCombustivel.isEmpty()||TipoCombustivel == null) {
 				throw new DescricaoEmBrancoException();
 		}
-            if(TipoCombustivel.equalsIgnoreCase(TipoCombustivel)){
+            if(TipoCombustivel.equalsIgnoreCase(v.getCombustiveis())){
                 this.TipoCombustivel=TipoCombustivel;
             }
             throw new CombustivelInvalidoException();
