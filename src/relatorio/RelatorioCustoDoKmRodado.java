@@ -1,8 +1,7 @@
 //RELATORIO QUE INFORMA TODAS AS DESPESAS DO VEICULO, DIVIDIDO PELO TOTAL DE KM RODADOS
 package relatorio;
 import registros.*;
-import excecoes.DoisTanqueCheioVerdadeiroException;
-
+import excecoes.*;
 public class RelatorioCustoDoKmRodado {
    //private Desempenho.Abastecimento
     private double KmLitro;
@@ -11,14 +10,14 @@ public class RelatorioCustoDoKmRodado {
     private int KmAnterior;
     private double valor;
     
-    public void MediaConsumo(RegistrarAbastecimento atual, RegistrarAbastecimento anterior) throws DoisTanqueCheioVerdadeiroException{
+    public void MediaConsumo(RegistrarAbastecimento atual, RegistrarAbastecimento anterior) throws DoisTanquesCheiosException{
     	try {
     		if(atual.getTanqueCheio() && anterior.getTanqueCheio()){
 	    		setKmAtual(atual.getKmAtual());
 	    		setKmAnterior(anterior.getKmAtual());
 	    		int kmRodados = this.KmAtual - this.KmAnterior;
-	    		setCustoKm(kmRodados / atual.getValorTotal()); /* Custo de Km rodados é igual a KmRodados divido pelo valor total do abastecimento */
-	    		setKmLitro(getCustoKm() / atual.getValorCombustivel()); /* Km por Litro é igual a Custo por Km, dividido pelo valor do ultimo abastecimento */
+	    		setCustoKm(kmRodados / atual.getValorTotal()); /* Custo de Km rodados ï¿½ igual a KmRodados divido pelo valor total do abastecimento */
+	    		setKmLitro(getCustoKm() / atual.getValorCombustivel()); /* Km por Litro ï¿½ igual a Custo por Km, dividido pelo valor do ultimo abastecimento */
 	    	}
     		else{
     			throw new DoisTanquesCheiosException();
