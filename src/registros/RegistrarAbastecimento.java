@@ -5,11 +5,14 @@ import veiculo.Veiculo;
 public class RegistrarAbastecimento extends Despesa {
     private String TipoCombustivel;
     private double ValorCombustivel;
-    private int KmAtual;
+    private int KmAtual,KmAnterior;
     private boolean TanqueCheio;
-    Veiculo ve;
+    
 
-
+public RegistrarAbastecimento(Veiculo v){
+   // KmAnterior = v.get;
+    TipoCombustivel = v.getCombustiveis();
+}
  
 
     public String getTipoCombustivel() {
@@ -21,7 +24,7 @@ public class RegistrarAbastecimento extends Despesa {
             if(TipoCombustivel.trim().equalsIgnoreCase("")||TipoCombustivel.isEmpty()||TipoCombustivel == null) {
 				throw new DescricaoEmBrancoException();
 		}
-            if(TipoCombustivel==ve.getCombustiveis()){
+            if(TipoCombustivel.equalsIgnoreCase(TipoCombustivel)){
                 this.TipoCombustivel=TipoCombustivel;
             }
             throw new CombustivelInvalidoException();
@@ -54,7 +57,7 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setKmAtual(int KmAtual) throws ValorInvalidoException {
         try{
-            if(KmAtual>0){//<<<<<========== MUdar ta errado
+            if(KmAtual>KmAnterior){//<<<<<========== MUdar ta errado
                this.KmAtual=KmAtual; 
             }
             throw new ValorInvalidoException();
@@ -76,7 +79,7 @@ public class RegistrarAbastecimento extends Despesa {
             throw new ValorInvalidoException();
             
         }catch(ValorInvalidoException e){
-            throw e;
+         //   throw e;
         }
     }
 
