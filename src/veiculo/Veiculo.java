@@ -17,16 +17,12 @@ public class Veiculo{
 	private String cor;
 	private String placa;
 	private String renavam;
-	private int kmDoUltimoAbastecimento;
-	private boolean tanqueDoUltimoAbastecimento;
 	private ArrayList <Despesa> despesas = new ArrayList();
 	
 
 	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
 		//despesas = new ArrayList();
-		kmDoUltimoAbastecimento = 0;
-		tanqueDoUltimoAbastecimento = false;
 	}
 	
 ///////////////////////////////////MARCA//////////////////////////////////////
@@ -218,24 +214,6 @@ public class Veiculo{
 		}
 	}
 
-///////////////////////////////////KM DO ULTIMOA BASTECIMENTO//////////////////////////////////////
-	public int getKmDoUltimoAbastecimento() {
-		return this.kmDoUltimoAbastecimento;
-	}
-
-	public void setKmDoUltimoAbastecimento(int km) {
-		this.kmDoUltimoAbastecimento = km;
-	}
-
-
-///////////////////////////////////TANQUE DO UTLIMO ABASTECIMENTO//////////////////////////////////////
-	public int getTanqueDoUltimoAbastecimento() {
-		return this.tanqueDoUltimoAbastecimento;
-	}
-
-	public void setTanqueDoUltimoAbastecimento(boolean tanquecheio) {
-		this.tanqueDoUltimoAbastecimento = tanquecheio;
-	}
 //*******************************************************************
 	public void addDespesa(Despesa d) {
 		this.despesas.add(d);
