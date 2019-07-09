@@ -7,6 +7,7 @@ public class RegistrarAbastecimento extends Despesa {
     private double ValorCombustivel;
     private int KmAtual;
     private boolean TanqueCheio;
+    private double totalLitros;
 
     Despesa dep =new Despesa();
     Veiculo ve;
