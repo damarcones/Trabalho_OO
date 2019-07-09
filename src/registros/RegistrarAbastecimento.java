@@ -13,11 +13,12 @@ public class RegistrarAbastecimento extends Despesa {
     private double litros;
     Veiculo v;
     
-    public RegistrarAbastecimento(double ValorCombustivel, boolean TanqueCheio,Veiculo v,String TipoCombustivel) {
-        
-       KmAnterior=this.getKmAtual();
-    }
     
+    public RegistrarAbastecimento()throws DescricaoEmBrancoException{
+   	 
+	}
+
+
 	public double getLitros() {
 		return litros;
 	}
@@ -36,9 +37,7 @@ public class RegistrarAbastecimento extends Despesa {
 	}
 
 
-	public RegistrarAbastecimento()throws DescricaoEmBrancoException{
-	 
-	}
+	
  
 
     public String getTipoCombustivel() {
