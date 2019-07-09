@@ -17,7 +17,17 @@ public class RegistrarAbastecimento extends Despesa {
     public RegistrarAbastecimento()throws DescricaoEmBrancoException{
    	 
 	}
+    public RegistrarAbastecimento(Despesa d) {
 
+    	try{
+    		setData(d.getData());
+    		setNome(d.getNome());
+    		setValorTotal(d.getValorTotal());
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
 
 	public double getLitros() {
 		return litros;
@@ -26,11 +36,11 @@ public class RegistrarAbastecimento extends Despesa {
 
 	public void setLitros(double litros) throws ValorInvalidoException{
 		try{
-            if(ValorCombustivel>0){
-                this.litros=litros;
+            if(ValorCombustivel<=0){
+            	throw new ValorInvalidoException();
             }
-            throw new ValorInvalidoException();
-           
+            this.litros=litros;
+            
         }catch(ValorInvalidoException e){
             throw e ;
         }
@@ -49,14 +59,18 @@ public class RegistrarAbastecimento extends Despesa {
             if(TipoCombustivel.trim().equalsIgnoreCase("")||TipoCombustivel.isEmpty()||TipoCombustivel == null) {
 				throw new DescricaoEmBrancoException();
 		}
-            if(TipoCombustivel.equalsIgnoreCase(v.getCombustiveis())){
-                this.TipoCombustivel=TipoCombustivel;
-            }
-            throw new CombustivelInvalidoException();
-           
+//            if(TipoCombustivel.equalsIgnoreCase(v.getCombustiveis())){
+//                this.TipoCombustivel=TipoCombustivel;
+//            }
+//            throw new CombustivelInvalidoException();
+//          
+            this.TipoCombustivel = TipoCombustivel;
         }
-        catch(CombustivelInvalidoException e){
-            throw e;
+//        catch(CombustivelInvalidoException e){
+//            throw e;
+//        }
+        catch(DescricaoEmBrancoException e) {
+        	throw e;
         }
     }
 
@@ -67,9 +81,11 @@ public class RegistrarAbastecimento extends Despesa {
     public void setValorCombustivel(double ValorCombustivel) throws ValorInvalidoException {
         try{
             if(ValorCombustivel>0){
-                this.ValorCombustivel=ValorCombustivel;
+            	 throw new ValorInvalidoException();
+               
             }
-            throw new ValorInvalidoException();
+            
+           this.ValorCombustivel=ValorCombustivel;
            
         }catch(ValorInvalidoException e){
             throw e ;
@@ -118,7 +134,7 @@ public class RegistrarAbastecimento extends Despesa {
     public static RegistrarAbastecimento init() {
     	RegistrarAbastecimento abastecimento = null;
     	boolean bool;
-    	double tanque, valorCombustivel, valorTanque, litros;
+    	double valorCombustivel, valorTanque, litros;
     	int kmAtual;
     	try {
     		abastecimento = new RegistrarAbastecimento();

@@ -10,7 +10,7 @@ public class RelatorioCustoDoKmRodado {
     private int KmAnterior;
     private double valor;
     
-    public void MediaConsumo() throws DoisTanquesCheiosException{
+    public void MediaConsumo( ) throws DoisTanquesCheiosException{
     
     }
 
