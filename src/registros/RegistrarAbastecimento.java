@@ -67,9 +67,9 @@ public void Abaster(String TC, double VC, int KA, boolean TQ) {
     }
 
 		public String toString() {
-			return "RegistrarAbastecimento [TipoCombustivel=" + TipoCombustivel + ","
-											+ "ValorCombustivel=" + ValorCombustivel + ","
-											+ "KmAtual=" + KmAtual + ","
-											+ "TanqueCheio=" + TanqueCheio + "]";
+			return "RegistrarAbastecimento [Tipo do combustivel: " + TipoCombustivel + ","
+											+ "\nValor do combustivel: " + ValorCombustivel + ","
+											+ "\nQuilometragem atual: " + KmAtual + ","
+											+ "\nTanque cheio? " + TanqueCheio + "]";
 		}
 }

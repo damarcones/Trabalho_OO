@@ -83,6 +83,8 @@ public static Despesa init() {
 
 @Override
 public String toString() {
-	return "Despesa [nome=" + nome + ", \ndata=" + data + ", \nvalorTotal=" + valorTotal + "]";
+	return "Despesa [Nome: " + nome + ","
+					+ "\nData: " + data + ","
+					+ "\nValor total: " + valorTotal + "]";
 }
 }
