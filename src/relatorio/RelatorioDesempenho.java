@@ -16,7 +16,8 @@ public class RelatorioDesempenho {
 	    		setKmAtual(atual.getKmAtual());
 	    		setKmAnterior(anterior.getKmAtual());
 	    		int kmRodados = this.KmAtual - this.KmAnterior;
-	    		setCustoKm(kmRodados/atual.getValorTotal());
+	    		setCustoKm(kmRodados / atual.getValorTotal()); /* Custo de Km rodados é igual a KmRodados divido pelo valor total do abastecimento */
+	    		setKmLitro(getCustoKm() / atual.getValorCombustivel()); /* Km por Litro é igual a Custo por Km, dividido pelo valor do ultimo abastecimento */
 	    	}
     		else{
     			throw new DoisTanqueCheioVerdadeiroException();
