@@ -220,16 +220,18 @@ public class Veiculo{
 	}
 
 	public String toString() {
-		return "Veiculo [Marca: " + marca + ","
-						+ "\nModelo: " + modelo + ","
-						+ "\nAno de fabricacao: " + anoFabricacao+ ","
-						+ "\nAno do modelo: " + anoModelo + ", \nMotorizacao: " + motorizacao + ","
-						+ "\nCapacidade do tanque: " + capacidadeTanque + ","
-						+ "\nCombustiveis aceitos: " + combustiveis+ ","
-						+ "\nCor: " + cor + ","
-						+ "\nPlaca: " + placa + ","
-						+ "\nRenavam: " + renavam + ","
-						+ "\nDespesas: " + despesas + "]";
+		return "VEICULO \nMarca: " + marca
+						+ "\nModelo: " + modelo
+						+ "\nAno de fabricacao: " + anoFabricacao
+						+ "\nAno do modelo: " + anoModelo
+						+ "\nMotorizacao: " + motorizacao + ","
+						+ "\nCapacidade do tanque: " + capacidadeTanque
+						+ "\nCombustiveis aceitos: " + combustiveis
+						+ "\nCor: " + cor
+						+ "\nPlaca: " + placa
+						+ "\nRenavam: " + renavam
+						+ "\n"
+						+ "\nDESPESAS: " + despesas;
 	}
 	
 	

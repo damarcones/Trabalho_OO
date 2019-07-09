@@ -1,5 +1,3 @@
-//FAZER UMA OPCAO PARA VER TODOS OS ABASTECIMENTOS
-
 import excecoes.*;
 import registros.RegistrarManutencao;
 import veiculo.Veiculo;
@@ -83,7 +81,7 @@ public class Main  {
 				catch(Exception e){
 					JOptionPane.showMessageDialog(null,e);
 				}
-				
+			
 			break;
 			case 2: //REGISTRAR DESPESAS
 				int opcaoDespesa = -1;

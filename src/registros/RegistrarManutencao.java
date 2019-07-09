@@ -53,7 +53,9 @@ public class RegistrarManutencao extends Despesa{
     	}
 
 		public String toString() {
-		return "RegistrarManutencao [Quilometragem atual: " + kmAtual + ","
-									+ "\ntoString(): " + super.toString() + "]";
+		return "\nMANUTENCAO:"
+				+ "\nQuilometragem atual: " + kmAtual
+				+ "\ntoString(): " + super.toString()
+				+ "\n-------------------------------------";
 		} 
 }
