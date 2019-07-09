@@ -81,7 +81,7 @@ public static Despesa init() {
 			return despesas;
     	}
 
-@Override
+
 public String toString() {
 	return "\nNome: " + nome
 			+ "\nData: " + data

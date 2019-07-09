@@ -72,20 +72,14 @@ public void Abaster(String TC, double ValComb, int KA, boolean TQ,double ValorT)
         this.TanqueCheio = TanqueCheio;
     }
 
-<<<<<<< HEAD
-		public String toString() {
-			return "\nABASTECIMENTO:"
-					+ "\nTipo do combustivel: " + TipoCombustivel
-					+ "\nValor do combustivel: " + ValorCombustivel
-					+ "\nQuilometragem atual: " + KmAtual
-					+ "\nTanque cheio? " + TanqueCheio
-					+ "\n-------------------------------------";
-=======
+    
     public String toString() {
-    return "RegistrarAbastecimento [Tipo do combustivel: " + TipoCombustivel + ","
-        	+ "\nValor do combustivel: " + ValorCombustivel + ","
-			+ "\nQuilometragem atual: " + KmAtual + ","
-			+ "\nTanque cheio? " + TanqueCheio + "]";
->>>>>>> a25f65cd92e47c84082a86c1d415af1cc4933169
+    return "\n\nABASTECIMENTO:"
+    		+ "Tipo do combustivel: " + TipoCombustivel
+        	+ "\nValor do combustivel: " + ValorCombustivel
+			+ "\nQuilometragem atual: " + KmAtual
+			+ "\nTanque cheio? " + TanqueCheio
+			+ super.toString();
+
 		}
 }

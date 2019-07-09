@@ -224,14 +224,14 @@ public class Veiculo{
 						+ "\nModelo: " + modelo
 						+ "\nAno de fabricacao: " + anoFabricacao
 						+ "\nAno do modelo: " + anoModelo
-						+ "\nMotorizacao: " + motorizacao + ","
-						+ "\nCapacidade do tanque: " + capacidadeTanque
+						+ "\nMotorizacao: " + motorizacao
+						+ "\nCapacidade do tanque: " + capacidadeTanque + " L"
 						+ "\nCombustiveis aceitos: " + combustiveis
 						+ "\nCor: " + cor
 						+ "\nPlaca: " + placa
 						+ "\nRenavam: " + renavam
 						+ "\n"
-						+ "\nDESPESAS: " + despesas;
+						+ "\n----DESPESAS----" + despesas;
 	}
 	
 	
