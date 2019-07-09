@@ -16,7 +16,7 @@ public class RelatorioDesempenho {
 	    		setKmAtual(atual.getKmAtual());
 	    		setKmAnterior(anterior.getKmAtual());
 	    		int kmRodados = this.KmAtual - this.KmAnterior;
-	    		setKmLitro(kmRodados/atual.getValorTotal());
+	    		setCustoKm(kmRodados/atual.getValorTotal());
 	    	}
     		else{
     			throw new DoisTanqueCheioVerdadeiroException();
