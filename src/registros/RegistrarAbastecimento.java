@@ -1,4 +1,5 @@
 package registros;
+import javax.swing.JOptionPane;
 import excecoes.*;
 import veiculo.Veiculo;
 
@@ -7,12 +8,30 @@ public class RegistrarAbastecimento extends Despesa {
     private double ValorCombustivel;
     private int KmAtual,KmAnterior;
     private boolean TanqueCheio;
+    private double litros;
     
 
-public RegistrarAbastecimento(Veiculo v){
-   // KmAnterior = v.get   ;
-    TipoCombustivel = v.getCombustiveis();
-}
+	public double getLitros() {
+		return litros;
+	}
+
+
+	public void setLitros(double litros) throws ValorInvalidoException{
+		try{
+            if(ValorCombustivel>0){
+                this.litros=litros;
+            }
+            throw new ValorInvalidoException();
+           
+        }catch(ValorInvalidoException e){
+            throw e ;
+        }
+	}
+
+
+	public RegistrarAbastecimento()throws DescricaoEmBrancoException{
+	 
+	}
  
 
     public String getTipoCombustivel() {
@@ -71,7 +90,7 @@ public RegistrarAbastecimento(Veiculo v){
         return TanqueCheio;
     }
 
-    public void setTanqueCheio(boolean TanqueCheio) {
+    public void setTanqueCheio(boolean TanqueCheio) throws ValorInvalidoException  {
         try{
             if(TanqueCheio==true || TanqueCheio==false){//<<<<<========== MUdar ta errado
                this.TanqueCheio=TanqueCheio;
@@ -79,7 +98,7 @@ public RegistrarAbastecimento(Veiculo v){
             throw new ValorInvalidoException();
             
         }catch(ValorInvalidoException e){
-         //   throw e;
+            throw e;
         }
     }
 
@@ -89,4 +108,35 @@ public RegistrarAbastecimento(Veiculo v){
 			+ "\nQuilometragem atual: " + KmAtual + ","
 			+ "\nTanque cheio? " + TanqueCheio + "]";
 		}
+    
+    public static RegistrarAbastecimento init() {
+    	RegistrarAbastecimento abastecimento = null;
+    	boolean bool;
+    	double tanque, valorCombustivel, valorTanque, litros;
+    	int kmAtual;
+    	try {
+    		abastecimento = new RegistrarAbastecimento();
+    		abastecimento.setNome("Abastecimento\n");
+    		abastecimento.setTipoCombustivel(JOptionPane.showInputDialog("Combustivel Abastecido"));
+    		bool = Boolean.parseBoolean(JOptionPane.showInputDialog("Tanque cheio?"));
+    		abastecimento.setTanqueCheio(bool);
+    		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
+    		abastecimento.setKmAtual(kmAtual);
+    		valorCombustivel = Double.parseDouble(JOptionPane.showInputDialog("Valor do litro"));
+    		abastecimento.setValorCombustivel(valorCombustivel);
+    		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento"));
+    		abastecimento.setValorCombustivel(valorTanque);
+    		litros = Double.parseDouble(JOptionPane.showInputDialog("Quantidade de litros"));
+    		abastecimento.setLitros(litros);
+    		
+    	}
+	    catch(NumberFormatException e) {
+			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
+	    }
+		
+		catch(Exception e){
+				JOptionPane.showMessageDialog(null,e);
+		}
+    	return abastecimento;
+    }
 }
