@@ -9,7 +9,7 @@ public class RegistrarAbastecimento extends Despesa {
     private String TipoCombustivel;
     private double ValorCombustivel;
     private int KmAtual,KmAnterior;
-    private boolean TanqueCheio;
+    private int TanqueCheio;
     private double litros;
     Veiculo v;
 
@@ -90,13 +90,13 @@ public class RegistrarAbastecimento extends Despesa {
         }
     }
 
-    public boolean getTanqueCheio() {
+    public int getTanqueCheio() {
         return TanqueCheio;
     }
 
-    public void setTanqueCheio(boolean TanqueCheio) throws ValorInvalidoException  {
+    public void setTanqueCheio(int TanqueCheio) throws ValorInvalidoException  {
         try{
-            if(TanqueCheio==true || TanqueCheio==false){//<<<<<========== MUdar ta errado
+            if(TanqueCheio == 0 || TanqueCheio == 0){//<<<<<========== MUdar ta errado
                this.TanqueCheio=TanqueCheio;
             }
             throw new ValorInvalidoException();
@@ -116,15 +116,15 @@ public class RegistrarAbastecimento extends Despesa {
     
     public static RegistrarAbastecimento init() {
     	RegistrarAbastecimento abastecimento = null;
-    	boolean bool;
-    	double tanque, valorCombustivel, valorTanque, litros;
+    	int tanque;
+    	double valorCombustivel, valorTanque, litros;
     	int kmAtual;
     	try {
     		abastecimento = new RegistrarAbastecimento();
     		abastecimento.setNome("Abastecimento\n");
     		abastecimento.setTipoCombustivel(JOptionPane.showInputDialog("Combustivel Abastecido"));
-    		bool = Boolean.parseBoolean(JOptionPane.showInputDialog("Tanque cheio?"));
-    		abastecimento.setTanqueCheio(bool);
+    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?"));
+    		abastecimento.setTanqueCheio(tanque);
     		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
     		abastecimento.setKmAtual(kmAtual);
     		valorCombustivel = Double.parseDouble(JOptionPane.showInputDialog("Valor do litro"));
