@@ -96,7 +96,7 @@ public class Main {
 						case 1:
 							//REGISTRAR ABASTECIMENTO
 							try {
-							veiculos.get(veiculos.size() -1).addDespesa(RegistrarAbastecimento.init());
+							veiculos.get(veiculos.size() -1).addDespesa(RegistrarAbastecimento.init(veiculos.get(veiculos.size() -1)));
 							
 							
 							JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
