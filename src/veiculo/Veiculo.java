@@ -250,7 +250,12 @@ public class Veiculo{
 			anoMod = Integer.parseInt(JOptionPane.showInputDialog("Ano do modelo:"));
 			carros.setAnoModelo(anoMod);
 			carros.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
-			carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:"));
+			carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:\n" + ""
+																+ "	1) Gasolina\n"
+																+ "2) Alcool\n"
+																+ "3) Diesel\n"
+																+ "4) Flex [Gasolina ou Alcool]\n"
+																+ "Escolha um numero acima."));
 			carros.setCor(JOptionPane.showInputDialog("Cor:"));
 			carros.setPlaca(JOptionPane.showInputDialog("Placa:"));
 			tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
