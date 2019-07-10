@@ -17,7 +17,7 @@ public class RegistrarAbastecimento extends Despesa {
     public RegistrarAbastecimento(){
    	 
 	}
- 
+
 
 	public double getLitros() {
 		return litros;
@@ -48,12 +48,8 @@ public class RegistrarAbastecimento extends Despesa {
         try{
             if(TipoCombustivel.trim().equalsIgnoreCase("")||TipoCombustivel.isEmpty()||TipoCombustivel == null) {
 				throw new DescricaoEmBrancoException();
-		}
-            
-                this.TipoCombustivel=TipoCombustivel.trim();
-           
-        }
-        catch(Exception e){
+            }
+        }catch(Exception e){
             throw e;
         }
     }
@@ -132,13 +128,11 @@ public class RegistrarAbastecimento extends Despesa {
     		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento"));
     		abastecimento.setValorCombustivel(valorTanque);
     		litros = Double.parseDouble(JOptionPane.showInputDialog("Quantidade de litros"));
-    		abastecimento.setLitros(litros);
-    		
+    		abastecimento.setLitros(litros);	
     	}
 	    catch(NumberFormatException e) {
 			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
 	    }
-		
 		catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
 		}
