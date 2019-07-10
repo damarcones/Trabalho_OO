@@ -17,14 +17,13 @@ public class Veiculo{
 	private String cor;
 	private String placa;
 	private String renavam;
-	private ArrayList <Despesa> despesas = new ArrayList();
+	private ArrayList <Despesa> despesas = new ArrayList();  //criando o array list pra armazenar os n veiculos e as n despesas 
         private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
 
 	
 
 	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
-		//despesas = new ArrayList();
 	}
 	
 ///////////////////////////////////MARCA//////////////////////////////////////

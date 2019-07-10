@@ -14,6 +14,7 @@ public class RelatorioSimples {
 	public void GerarRelatorioAbastecimento() throws DescricaoEmBrancoException{
             //RegistrarAbastecimento ga = new RegistrarAbastecimento() ;
             //ga.toString();
+
 	}
 	public void GerarRelatorioTaxa() throws DescricaoEmBrancoException {
 		//RegistrarTaxa r= new RegistrarTaxa(); 
