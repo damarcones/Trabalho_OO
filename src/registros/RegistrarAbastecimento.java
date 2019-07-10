@@ -12,6 +12,10 @@ public class RegistrarAbastecimento extends Despesa {
     private boolean TanqueCheio;
     private double litros;
     Veiculo v;
+
+    public int getKmAnterior() {
+        return KmAnterior;
+    }
     
     
     public RegistrarAbastecimento(){
