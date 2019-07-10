@@ -1,7 +1,6 @@
 package excecoes;
 
 public class DescricaoEmBrancoException extends Exception {
-	
 	public DescricaoEmBrancoException() {	
 	}
 	
