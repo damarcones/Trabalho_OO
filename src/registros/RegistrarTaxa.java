@@ -54,7 +54,7 @@ public class RegistrarTaxa extends Despesa{
 	}
 
 	public String toString() {
-		return "\n\nTAXA:" + super.toString()
+		return "\n\nTAXA: " + super.toString()
 				+ "\nCategoria da Taxa: " + CategoriaTaxa;
 				
 	}
