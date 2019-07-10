@@ -40,6 +40,7 @@ public class Veiculo{
 
 	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
+		this.kmDoUltimoAbastecimento = 0;
 	}
 	
 ///////////////////////////////////MARCA//////////////////////////////////////
