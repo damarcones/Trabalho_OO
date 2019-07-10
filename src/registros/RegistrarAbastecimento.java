@@ -9,13 +9,14 @@ public class RegistrarAbastecimento extends Despesa {
     private int TipoCombustivel;
     private double ValorCombustivel;
     private int KmAtual,KmAnterior;
-    private int TanqueCheio;
+    private int TanqueCheio, UltimoTanque;
     private double litros;
     Veiculo v;
     
     public RegistrarAbastecimento(Veiculo v) {
 		this.v = v;
 		this.KmAnterior = v.getKmDoUltimoAbastecimento();
+		this.UltimoTanque = v.getTanqueDoUltimoAbastecimento();
 	}
 
 
@@ -129,7 +130,7 @@ public class RegistrarAbastecimento extends Despesa {
     
     public static RegistrarAbastecimento init(Veiculo v) {
     	RegistrarAbastecimento abastecimento = null;
-    	int tanque, tipo;
+    	int tanque = 0, tipo;
     	double valorCombustivel, valorTanque, litros;
     	int kmAtual = 0;
     	while(true) {
@@ -165,6 +166,7 @@ public class RegistrarAbastecimento extends Despesa {
     		break;
     }
     	v.setKmDoUltimoAbastecimento(kmAtual);
+    	v.setTanqueDoUltimoAbastecimento(tanque);
     	return abastecimento;
     }
     

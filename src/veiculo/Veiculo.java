@@ -18,6 +18,7 @@ public class Veiculo{
 	private String placa;
 	private String renavam;
 	private int kmDoUltimoAbastecimento;
+	private int tanqueDoUltimoAbastecimento;
 	private ArrayList <Despesa> despesas = new ArrayList();  //criando o array list pra armazenar os n veiculos e as n despesas 
     private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
 	private ArrayList <RegistrarManutencao> ma = new ArrayList();
@@ -240,6 +241,13 @@ public class Veiculo{
 		this.kmDoUltimoAbastecimento = kmDoUltimoAbastecimento;
 	}
 
+	public int getTanqueDoUltimoAbastecimento() {
+		return tanqueDoUltimoAbastecimento;
+	}
+	
+	public void setTanqueDoUltimoAbastecimento(int tanqueCheio) {
+		this.tanqueDoUltimoAbastecimento = tanqueCheio;
+	}
 	//*******************************************************************
 	public void addDespesa(Despesa d) {
 		this.despesas.add(d);
