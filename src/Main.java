@@ -1,5 +1,6 @@
 import excecoes.*;
 import registros.RegistrarManutencao;
+import relatorio.RelatorioSimples;
 import veiculo.Veiculo;
 import javax.swing.*;
 import java.util.*;
@@ -148,15 +149,27 @@ public class Main {
 						switch(opcaoRelatorio) {
 						case 0:
 							break;
-						case 1:
-							//RELATORIO DE DESEMPENHO
-						break;
+							
+						case 1: //gerar relatorio simples de abastecimento
+							JOptionPane.showMessageDialog(null,RelatorioSimples.GerarRelatorioAbastecimento(veiculos.get(veiculos.size() -1).getAbs()));
+								break;
 						
-						case 2:
-							//RELATORIO DE CONSUMO
-						break;
-						
+						case 2: //gerar relatorio simples de manutencao
+							
+								break;
+								
+						case 3: //gerar relatorio simples de taxa
+							
+								break;
+								
+						case 4: //gerar relatorio de desempenho: consumo do veiculo
+							
+								break;
+								
+						case 5: //gerar relatorio de desempenho: custo do km rodado
 
+								break;
+						 
 						default:
 							JOptionPane.showMessageDialog(null," Digite um numero válido!");
 						}
