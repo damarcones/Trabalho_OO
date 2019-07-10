@@ -33,18 +33,30 @@ public class Main  {
 
 	static ArrayList<Veiculo> veiculos = new ArrayList<>();
 
-/******************************************REGISTRAR VEICULO****************************************/	
+/******************************************REGISTRAR VEICULO ****************************************/	
 
-	public static void RegistrarVeiculo() {
+	public static void RegistrarVeiculo() throws DescricaoEmBrancoException {
+		Veiculo automovel = new Veiculo();
 		try {
-			veiculos.add(Veiculo.init());
-			JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
+			automovel.init();
 		}
 		catch(NumberFormatException e) {
 			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
 		}
 		catch(Exception e){
 			JOptionPane.showMessageDialog(null,e);
+		}
+		if(automovel.getMarca() != null &&
+			automovel.getModelo() != null &&
+			automovel.getAnoFabricacao() != 0 &&
+			automovel.getAnoModelo() != 0 &&
+			automovel.getCapacidadeTanque() != 0 &&
+			automovel.getCombustiveis() != null &&
+			automovel.getCor() != null &&
+			automovel.getPlaca() != null &&
+			automovel.getRenavam() != null) {
+			veiculos.add(automovel);
+			JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1));
 		}
 	}
 	

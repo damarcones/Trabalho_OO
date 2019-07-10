@@ -103,10 +103,11 @@ public class RegistrarAbastecimento extends Despesa {
     }
 
     public String toString() {
-    return "RegistrarAbastecimento [Tipo do combustivel: " + TipoCombustivel + ","
-        	+ "\nValor do combustivel: " + ValorCombustivel + ","
-			+ "\nQuilometragem atual: " + KmAtual + ","
-			+ "\nTanque cheio? " + TanqueCheio + "]";
+    return "\nABASTECIMENTO: "
+    		+ "\nTipo do combustivel: " + TipoCombustivel
+        	+ "\nValor do combustivel: " + ValorCombustivel
+			+ "\nQuilometragem atual: " + KmAtual
+			+ "\nTanque cheio? " + TanqueCheio;
 		}
     
     public static RegistrarAbastecimento init() {
