@@ -241,6 +241,7 @@ public class Veiculo{
 		Veiculo carros  = null;
 		double tanque;
 		int anoFab, anoMod, tipo;
+		while(true) {
 		try {
 			carros = new Veiculo();
 			carros.setMarca(JOptionPane.showInputDialog("Marca do carro:"));	
@@ -269,7 +270,19 @@ public class Veiculo{
 		}catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
 	}
-		
+			if(carros.getMarca() != null
+				&& carros.getModelo() != null
+				&& carros.getAnoFabricacao() != 0
+				&& carros.getAnoModelo() != 0
+				&& carros.getMotorizacao() != null
+				&& carros.getCombustiveis() != 0
+				&& carros.getCor() != null
+				&& carros.getPlaca() != null
+				&& carros.getCapacidadeTanque() != 0
+				&& carros.getRenavam() != null)
+				
+				break;
+		}
 		return carros;
 	}
 	
