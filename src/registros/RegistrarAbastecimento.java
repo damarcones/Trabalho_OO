@@ -8,31 +8,31 @@ import veiculo.Veiculo;
 public class RegistrarAbastecimento extends Despesa {
     private int TipoCombustivel;
     private double ValorCombustivel;
-    private int KmAtual;
-    private int KmAnterior;
+    private int KmAtual,KmAnterior;
     private int TanqueCheio;
-    private double Litros;
+    private double litros;
     Veiculo v;
+    
+    public RegistrarAbastecimento(Veiculo v) {
+		this.v = v;
+		this.KmAnterior = v.getKmDoUltimoAbastecimento();
+	}
 
-    public int getKmAnterior() {
-        return KmAnterior;
-    }
-    
-    
-    public RegistrarAbastecimento(){
-   	 
+
+	public RegistrarAbastecimento(){
+   	 	
 	}
 
 
 	public double getLitros() {
-		return Litros;
+		return litros;
 	}
 
 
 	public void setLitros(double litros) throws ValorInvalidoException{
 		try{
             if(ValorCombustivel>0){
-                this.Litros=litros;
+                this.litros=litros;
             }
             throw new ValorInvalidoException();
            
@@ -43,16 +43,32 @@ public class RegistrarAbastecimento extends Despesa {
 
 
 	
+ 
+
     public int getTipoCombustivel() {
         return TipoCombustivel;
     }
 
-    public void setTipoCombustivel(int TipoCombustivel) throws ValorInvalidoException {
+    public void setTipoCombustivel(int TipoCombustivel) throws ValorInvalidoException, CombustivelInvalidoException {
+    	JOptionPane.showMessageDialog(null, "Placa do Veiculo sendo Cadastrado" + v.getPlaca() + "\nEle possui tipo combustivel" + v.getCombustiveis());
         try{
-            if(TipoCombustivel != 1 || TipoCombustivel != 2 || TipoCombustivel != 3) {
+            if(TipoCombustivel != 1 && TipoCombustivel != 2 && TipoCombustivel != 3) {
 				throw new ValorInvalidoException();
             }
-            
+            else if(this.v.getCombustiveis() == 4) {
+            	if(TipoCombustivel == 3) {
+            		throw new CombustivelInvalidoException();
+            	}
+            	else if (TipoCombustivel == 1 || TipoCombustivel == 2) {
+            		this.TipoCombustivel = TipoCombustivel;
+            	}
+            }
+        	else if(TipoCombustivel != this.v.getCombustiveis()) {
+            	throw new CombustivelInvalidoException();
+            }
+        	else {
+        		this.TipoCombustivel = TipoCombustivel;
+        	}
         }catch(Exception e){
             throw e;
         }
@@ -96,11 +112,10 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setTanqueCheio(int TanqueCheio) throws ValorInvalidoException  {
         try{
-            if(TanqueCheio == 1 || TanqueCheio == -1){//<<<<<========== MUdar ta errado
-               this.TanqueCheio=TanqueCheio;
+            if(TanqueCheio != 1 && TanqueCheio != -1){//<<<<<========== MUdar ta errado
+            	throw new ValorInvalidoException();
             }
-            throw new ValorInvalidoException();
-            
+            this.TanqueCheio=TanqueCheio;
         }catch(ValorInvalidoException e){
             throw e;
         }
@@ -114,16 +129,16 @@ public class RegistrarAbastecimento extends Despesa {
 			+ "\nTanque cheio? " + TanqueCheio;
 		}
     
-    public static RegistrarAbastecimento init() {
+    public static RegistrarAbastecimento init(Veiculo v) {
     	RegistrarAbastecimento abastecimento = null;
     	int tanque, tipo;
     	double valorCombustivel, valorTanque, litros;
     	int kmAtual;
     	while(true) {
     	try {
-    		abastecimento = new RegistrarAbastecimento();
+    		abastecimento = new RegistrarAbastecimento(v);
     		abastecimento.setNome("Abastecimento\n");
-    		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido"+
+    		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido\n"+
     																		"1) Gasolina\n"+
     																		"2) Acool\n"+
     																		"3) Diesel\n"+
