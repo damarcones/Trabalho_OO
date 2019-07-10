@@ -128,7 +128,7 @@ public class Veiculo{
 	public void setCombustiveis(int combustiveis) throws ValorInvalidoException {
 		
 		try {
-			if(combustiveis != 1 || combustiveis != 2 || combustiveis != 3 || combustiveis != 4) {
+			if(combustiveis != 1 && combustiveis != 2 && combustiveis != 3 && combustiveis != 4) {
 				throw new ValorInvalidoException();
 			}
 			this.combustiveis = combustiveis;
