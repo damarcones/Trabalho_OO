@@ -96,7 +96,7 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setKmAtual(int KmAtual) throws ValorInvalidoException {
         try{
-            if(this.KmAnterior >= KmAtual){//<<<<<========== MUdar ta errado
+            if(this.KmAnterior >= KmAtual){
             	throw new ValorInvalidoException();
             }
             this.KmAtual=KmAtual; 
@@ -111,7 +111,7 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setTanqueCheio(int TanqueCheio) throws ValorInvalidoException  {
         try{
-            if(TanqueCheio != 1 && TanqueCheio != -1){//<<<<<========== MUdar ta errado
+            if(TanqueCheio != 1 && TanqueCheio != -1){
             	throw new ValorInvalidoException();
             }
             this.TanqueCheio=TanqueCheio;
