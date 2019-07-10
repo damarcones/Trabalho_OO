@@ -9,7 +9,7 @@ public class RelatorioCustoDoKmRodado {
     private int KmAtual;
     private int KmAnterior;
     private double valor;
-    
+    RegistrarAbastecimento ra;
     public void MediaConsumo() throws DoisTanquesCheiosException{
     
     }
@@ -23,6 +23,7 @@ public class RelatorioCustoDoKmRodado {
     }
 
     public double getCustoKm() {
+        
         return CustoKm;
     }
 
@@ -35,7 +36,7 @@ public class RelatorioCustoDoKmRodado {
     }
 
     public void setKmAtual(int KmAtual) {
-        this.KmAtual = KmAtual;
+        this.KmAtual = ra.getKmAtual();
     }
 
     public int getKmAnterior() {
@@ -43,7 +44,7 @@ public class RelatorioCustoDoKmRodado {
     }
 
     public void setKmAnterior(int KmAnterior) {
-        this.KmAnterior = KmAnterior;
+        this.KmAnterior = ra.getKmAnterior();
     }
 
     public double getValor() {
