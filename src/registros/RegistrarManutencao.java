@@ -37,7 +37,7 @@ public class RegistrarManutencao extends Despesa{
     		}
     	}
     	
-    	public static RegistrarManutencao init() {
+    	public static RegistrarManutencao init(Veiculo v) {
     		RegistrarManutencao manutencao = null;
     		int km;
     		while(true) {

@@ -100,7 +100,7 @@ public class Main {
 						case 1:
 							//REGISTRAR ABASTECIMENTO
 							try {
-							veiculos.get(veiculos.size() -1).addDespesa(RegistrarAbastecimento.init(veiculos.get(veiculos.size() -1)));
+							veiculos.get(veiculos.size() -1).addAbs(RegistrarAbastecimento.init(veiculos.get(veiculos.size() -1)));
 							
 							
 							JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
@@ -112,15 +112,20 @@ public class Main {
 						
 						case 2:
 							//REGISTRAR MANUTENÇÃO
-							veiculos.get(veiculos.size() -1).addDespesa(RegistrarManutencao.init());
+							try {
+							veiculos.get(veiculos.size() -1).addMA(RegistrarManutencao.init(veiculos.get(veiculos.size() -1)));
 
 							JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
+							}
+							catch(Exception e) {
+								throw e;
+							}
 						break;
 		
 						case 3:
 							//REGISTAR TAXA(IMPOSTO, SEGURO, ETC)
 							//JOptionPane.showMessageDialog(null,REGISTRAR_TAXA);
-							veiculos.get(veiculos.size() -1).addDespesa(RegistrarTaxa.init());
+							veiculos.get(veiculos.size() -1).addtax(RegistrarTaxa.init());
 							JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
 							
 						break;

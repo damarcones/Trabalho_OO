@@ -10,8 +10,8 @@ public class RelatorioSimples extends Despesa{
 /*********************PARA GERAR O RELATORIO DE TODOS OS ABASTECIMENTOS*********************/
 	public static String  GerarRelatorioAbastecimento(ArrayList<RegistrarAbastecimento> abs){
             StringBuilder relatorio = new StringBuilder();
-            	if(abs.size() == 0)
-            		relatorio.append("Não há dados para gerar um relatório!");
+            	if(abs.size()  == 0)
+            		relatorio.append("Nï¿½o hï¿½ dados para gerar um relatï¿½rio!");
             	else {
             		for(RegistrarAbastecimento a : abs) {
             			relatorio.append("\n"+ a.toString());
@@ -24,7 +24,7 @@ public class RelatorioSimples extends Despesa{
 	public static String GerarRelatorioManutencao(ArrayList<RegistrarManutencao>ma){
 		StringBuilder relatorio = new StringBuilder();
     	if(ma.size() == 0)
-    		relatorio.append("Não há dados para gerar um relatório!");
+    		relatorio.append("Nï¿½o hï¿½ dados para gerar um relatï¿½rio!");
     	else {
     		for(RegistrarManutencao a : ma) {
     			relatorio.append( "\n"+ a.toString());
@@ -37,7 +37,7 @@ public class RelatorioSimples extends Despesa{
 	public static String GerarRelatorioTaxa(ArrayList<RegistrarTaxa>tax){
 			StringBuilder relatorio = new StringBuilder();
 	    	if(tax.size() == 0)
-	    		relatorio.append("Não há relatório");
+	    		relatorio.append("Nï¿½o hï¿½ relatï¿½rio");
 	    	else {
 	    		for(RegistrarTaxa a : tax) {
 	    			relatorio.append( "\n"+ a.toString());
