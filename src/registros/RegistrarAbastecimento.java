@@ -8,9 +8,10 @@ import veiculo.Veiculo;
 public class RegistrarAbastecimento extends Despesa {
     private int TipoCombustivel;
     private double ValorCombustivel;
-    private int KmAtual,KmAnterior;
+    private int KmAtual;
+    private int KmAnterior;
     private int TanqueCheio;
-    private double litros;
+    private double Litros;
     Veiculo v;
 
     public int getKmAnterior() {
@@ -24,14 +25,14 @@ public class RegistrarAbastecimento extends Despesa {
 
 
 	public double getLitros() {
-		return litros;
+		return Litros;
 	}
 
 
 	public void setLitros(double litros) throws ValorInvalidoException{
 		try{
             if(ValorCombustivel>0){
-                this.litros=litros;
+                this.Litros=litros;
             }
             throw new ValorInvalidoException();
            
@@ -42,8 +43,6 @@ public class RegistrarAbastecimento extends Despesa {
 
 
 	
- 
-
     public int getTipoCombustivel() {
         return TipoCombustivel;
     }
