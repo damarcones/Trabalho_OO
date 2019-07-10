@@ -280,7 +280,7 @@ public class Veiculo{
 				&& carros.getPlaca() != null
 				&& carros.getCapacidadeTanque() != 0
 				&& carros.getRenavam() != null)
-				
+
 				break;
 		}
 		return carros;
