@@ -13,9 +13,17 @@ public class RegistrarAbastecimento extends Despesa {
     private double litros;
     Veiculo v;
     
-    public RegistrarAbastecimento(Veiculo v) {
+    public RegistrarAbastecimento(Veiculo v, Despesa d) {
 		this.v = v;
 		this.KmAnterior = v.getKmDoUltimoAbastecimento();
+		try{
+    		setData(d.getData());
+    		setNome(d.getNome());
+    		setValorTotal(d.getValorTotal());
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
 	}
 
 
@@ -50,7 +58,6 @@ public class RegistrarAbastecimento extends Despesa {
     }
 
     public void setTipoCombustivel(int TipoCombustivel) throws ValorInvalidoException, CombustivelInvalidoException {
-    	JOptionPane.showMessageDialog(null, "Placa do Veiculo sendo Cadastrado" + v.getPlaca() + "\nEle possui tipo combustivel" + v.getCombustiveis());
         try{
             if(TipoCombustivel != 1 && TipoCombustivel != 2 && TipoCombustivel != 3) {
 				throw new ValorInvalidoException();
@@ -96,11 +103,10 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setKmAtual(int KmAtual) throws ValorInvalidoException {
         try{
-            if(KmAtual>KmAnterior){//<<<<<========== MUdar ta errado
-               this.KmAtual=KmAtual; 
+            if(this.KmAnterior >= KmAtual){//<<<<<========== MUdar ta errado
+            	throw new ValorInvalidoException();
             }
-            throw new ValorInvalidoException();
-            
+            this.KmAtual=KmAtual; 
         }catch(ValorInvalidoException e){
             throw e;
         }
@@ -136,7 +142,7 @@ public class RegistrarAbastecimento extends Despesa {
     	int kmAtual;
     	while(true) {
     	try {
-    		abastecimento = new RegistrarAbastecimento(v);
+    		abastecimento = new RegistrarAbastecimento(v, Despesa.init());
     		abastecimento.setNome("Abastecimento\n");
     		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido\n"+
     																		"1) Gasolina\n"+
