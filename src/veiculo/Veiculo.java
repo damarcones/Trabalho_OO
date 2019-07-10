@@ -19,12 +19,12 @@ public class Veiculo{
 	private String renavam;
 	private int kmDoUltimoAbastecimento;
 	private ArrayList <Despesa> despesas = new ArrayList();  //criando o array list pra armazenar os n veiculos e as n despesas 
-    	private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
+    private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
 	private ArrayList <RegistrarManutencao> ma = new ArrayList();
 	private ArrayList <RegistrarTaxa>  tax= new ArrayList();
 
 
-	public ArrayList<RegistrarAbastecimento> getAbs() {
+		public ArrayList<RegistrarAbastecimento> getAbs() {
 			return abs;
 		}
 
@@ -34,12 +34,6 @@ public class Veiculo{
         
         public ArrayList<RegistrarTaxa> getTAX() {
 			return tax;
-		}
-
-	
-
-	public ArrayList<RegistrarAbastecimento> getAbs() {
-			return abs;
 		}
 
 		
