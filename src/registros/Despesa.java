@@ -10,7 +10,8 @@ public class Despesa {
     
     public void Despesas() throws DescricaoEmBrancoException { 
     }
-
+    
+///////////////////////NOME DA DESPESA/////////////////////////
     	public String getNome() {
     		return nome;
     	}
@@ -28,6 +29,7 @@ public class Despesa {
     		}
     	}
 
+///////////////////////DATA DA DESPESA/////////////////////////
     	public String getData() {
     		return data;
     	}
@@ -45,6 +47,7 @@ public class Despesa {
     		}
     	}
 
+///////////////////////VALOR TOTAL/////////////////////////
     	public double getValorTotal() {
     		return valorTotal;
     	}
@@ -61,7 +64,9 @@ public class Despesa {
     			throw f;
     		}
     	} 
-public static Despesa init() {
+    	
+///////////////////////INIT/////////////////////////	
+    	public static Despesa init() {
     		Despesa despesas = null;
     		double valor;
     		
@@ -74,7 +79,6 @@ public static Despesa init() {
 	    			despesas.setValorTotal(valor);
 	    		}
 	
-	    		
 				catch(Exception e){
 					JOptionPane.showMessageDialog(null,e);
 				}
@@ -85,9 +89,9 @@ public static Despesa init() {
     	}
 
 
-public String toString() {
-	return "\nNome: " + nome
-			+ "\nData: " + data
-			+ "\nValor total: " + valorTotal;
-}
+    	public String toString() {
+    		return "\nNome: " + nome
+    				+ "\nData: " + data
+    				+ "\nValor total: " + valorTotal;
+    	}
 }
