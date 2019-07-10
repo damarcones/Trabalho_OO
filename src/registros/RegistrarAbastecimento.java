@@ -12,14 +12,10 @@ public class RegistrarAbastecimento extends Despesa {
     private int TanqueCheio;
     private double litros;
     Veiculo v;
-
-    public int getKmAnterior() {
-        return KmAnterior;
-    }
-    
     
     public RegistrarAbastecimento(Veiculo v) {
 		this.v = v;
+		this.KmAnterior = v.getKmDoUltimoAbastecimento();
 	}
 
 
@@ -116,11 +112,10 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setTanqueCheio(int TanqueCheio) throws ValorInvalidoException  {
         try{
-            if(TanqueCheio == 1 || TanqueCheio == -1){//<<<<<========== MUdar ta errado
-               this.TanqueCheio=TanqueCheio;
+            if(TanqueCheio != 1 && TanqueCheio != -1){//<<<<<========== MUdar ta errado
+            	throw new ValorInvalidoException();
             }
-            throw new ValorInvalidoException();
-            
+            this.TanqueCheio=TanqueCheio;
         }catch(ValorInvalidoException e){
             throw e;
         }
