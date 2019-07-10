@@ -65,19 +65,22 @@ public static Despesa init() {
     		Despesa despesas = null;
     		double valor;
     		
-    		
-    		try {
-    			despesas = new Despesa();
-    			despesas.setNome(JOptionPane.showInputDialog("Informe o nome da despesa:"));
-    			despesas.setData(JOptionPane.showInputDialog("Informe a Data:"));
-    			valor = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor"));
-    			despesas.setValorTotal(valor);
+    		while(true) {
+	    		try {
+	    			despesas = new Despesa();
+	    			despesas.setNome(JOptionPane.showInputDialog("Informe o nome da despesa:"));
+	    			despesas.setData(JOptionPane.showInputDialog("Informe a Data:"));
+	    			valor = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor"));
+	    			despesas.setValorTotal(valor);
+	    		}
+	
+	    		
+				catch(Exception e){
+					JOptionPane.showMessageDialog(null,e);
+				}
+	    		if(despesas.getNome() != null && despesas.getData() != null && despesas.getValorTotal() != 0)
+	    			break;
     		}
-
-    		
-			catch(Exception e){
-				JOptionPane.showMessageDialog(null,e);
-			}
 			return despesas;
     	}
 

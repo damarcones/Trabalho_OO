@@ -39,15 +39,18 @@ public class RegistrarTaxa extends Despesa{
     }
     public static RegistrarTaxa init() {
 		RegistrarTaxa taxa = null;
-		
-		try {
-			taxa = new RegistrarTaxa(Despesa.init());
-			taxa.setCategoriaTaxa(JOptionPane.showInputDialog("A despesa é imposto ou particular?: "));
-			
-		} catch(Exception e) {
-			JOptionPane.showMessageDialog(null,e);
-		
-		}return taxa;
+		while(true) {
+			try {
+				taxa = new RegistrarTaxa(Despesa.init());
+				taxa.setCategoriaTaxa(JOptionPane.showInputDialog("A despesa é imposto ou particular?: "));
+				
+			} catch(Exception e) {
+				JOptionPane.showMessageDialog(null,e);
+			}
+			if(taxa.getCategoriaTaxa() != null)
+				break;
+		}
+		return taxa;
 	}
 
 	public String toString() {
