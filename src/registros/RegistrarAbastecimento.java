@@ -121,7 +121,7 @@ public class RegistrarAbastecimento extends Despesa {
     }
 
  
-    
+    //VISUALIZAR ENTRADA DE ABASTECIMENTO
     public String toString() {
         return "\nABASTECIMENTO: "
         		+ "\nTipo do combustivel: " + TipoCombustivel
@@ -130,7 +130,7 @@ public class RegistrarAbastecimento extends Despesa {
     			+ "\nTanque cheio? " + TanqueCheio;
     		}
 
-
+	//ENTRADA DOS VALOES EM ABASTECIMENTO
 	public static RegistrarAbastecimento init(Veiculo v) {
     	RegistrarAbastecimento abastecimento = null;
     	int tanque = 0, tipo;
