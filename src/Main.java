@@ -40,24 +40,7 @@ public class Main {
 		int opcaoMenu = -1;
 		
 			
-	while(true)		
-	{
-		int maisUmCarro = 1;
-//		1 == não
-//		0 == sim
-//		-1 == fechar
-		
-		Veiculo carros= new Veiculo();
-		try 		
-		{
-			maisUmCarro = JOptionPane.showConfirmDialog(null, "Você quer adicionar mais carro?", "Adicionar Veiculo",JOptionPane.YES_NO_OPTION);
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		if(maisUmCarro == 1|| maisUmCarro == -1)
-			break;
+	
 
 		do{
 		try {
@@ -67,6 +50,24 @@ public class Main {
 			case 0:
 				break;
 			case 1: // REGISTRAR CARROS
+				while(true)		
+				{
+					int maisUmCarro = 1;
+//					1 == não
+//					0 == sim
+//					-1 == fechar
+					
+					Veiculo carros= new Veiculo();
+					try 		
+					{
+						maisUmCarro = JOptionPane.showConfirmDialog(null, "Você quer adicionar mais carro?", "Adicionar Veiculo",JOptionPane.YES_NO_OPTION);
+						
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+					
+					if(maisUmCarro == 1|| maisUmCarro == -1)
+						break;
 				try {
 
 			
@@ -81,6 +82,7 @@ public class Main {
 				catch(Exception e){
 					JOptionPane.showMessageDialog(null,e);
 				}
+				}
 			
 			break;
 			case 2: //REGISTRAR DESPESAS
@@ -94,9 +96,15 @@ public class Main {
 							break;
 						case 1:
 							//REGISTRAR ABASTECIMENTO
+							try {
 							veiculos.get(veiculos.size() -1).addDespesa(RegistrarAbastecimento.init());
 							
+							
 							JOptionPane.showMessageDialog(null,veiculos.get(veiculos.size() -1).toString());
+							}
+							catch(Exception e) {
+								throw e;
+							}
 						break;
 						
 						case 2:
@@ -183,7 +191,7 @@ public class Main {
 		
 		}while(opcaoMenu != 0);
 //		Fim do switch
-		}
+		
 		//JOptionPane.showMessageDialog(null,carro);
 		JOptionPane.showMessageDialog(null,"Programa Finalizado com Sucesso!\n");
 	}
