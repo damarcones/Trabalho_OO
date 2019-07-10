@@ -7,18 +7,8 @@ import veiculo.*;
 import java.util.ArrayList;
 
 
-<<<<<<< HEAD
-public class RelatorioSimples {
-=======
-public class RelatorioSimples  extends Despesa{
-	public String abastecimentos;
-		
-	
-	
-	public void GerarRelatorioAbastecimento() throws DescricaoEmBrancoException{
-            //RegistrarAbastecimento ga = new RegistrarAbastecimento() ;
-            //ga.toString();
->>>>>>> a90d1141c973ca04ce7e9c3739bb59e2dcf6534c
+
+public class RelatorioSimples extends Despesa{
 
 /*********************PARA GERAR O RELATORIO DE TODOS OS ABASTECIMENTOS*********************/
 	//RelatorioSimples.GerarRelatorioAbastecimento(abs);
@@ -45,7 +35,7 @@ public class RelatorioSimples  extends Despesa{
 //    			relatorio.append( "\n"+ a.toString());
 //    		}
 //    	}
-//    
+//     
 //    return relatorio.toString();	
 	}
 

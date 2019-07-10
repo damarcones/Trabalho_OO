@@ -169,7 +169,7 @@ public class Main {
 						case 5: //gerar relatorio de desempenho: custo do km rodado
 
 								break;
-						
+						 
 						default:
 							JOptionPane.showMessageDialog(null," Digite um numero válido!");
 						}
