@@ -97,7 +97,7 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setTanqueCheio(int TanqueCheio) throws ValorInvalidoException  {
         try{
-            if(TanqueCheio == 0 || TanqueCheio == 0){//<<<<<========== MUdar ta errado
+            if(TanqueCheio == 1 || TanqueCheio == -1){//<<<<<========== MUdar ta errado
                this.TanqueCheio=TanqueCheio;
             }
             throw new ValorInvalidoException();
@@ -130,7 +130,7 @@ public class RegistrarAbastecimento extends Despesa {
     																		"3) Diesel\n"+
     																		"Digite um numero."));
     		abastecimento.setTipoCombustivel(tipo);
-    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?"));
+    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?\n 1 para sim, -1 para não"));
     		abastecimento.setTanqueCheio(tanque);
     		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
     		abastecimento.setKmAtual(kmAtual);
