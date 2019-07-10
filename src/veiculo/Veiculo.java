@@ -13,7 +13,7 @@ public class Veiculo{
 	private int anoModelo;
 	private String motorizacao;
 	private double capacidadeTanque;
-	private String combustiveis;
+	private int combustiveis;
 	private String cor;
 	private String placa;
 	private String renavam;
@@ -121,20 +121,20 @@ public class Veiculo{
 	}
 
 ///////////////////////////////////COMBUSTIVEIS//////////////////////////////////////
-	public String getCombustiveis() {
+	public int getCombustiveis() {
 		return combustiveis;
 	}
 
-	public void setCombustiveis(String combustiveis) throws DescricaoEmBrancoException {
+	public void setCombustiveis(int combustiveis) throws ValorInvalidoException {
 		
 		try {
-			if(combustiveis.trim().equalsIgnoreCase("")||combustiveis.isEmpty()||combustiveis == null) {
-				throw new DescricaoEmBrancoException();
+			if(combustiveis != 1 || combustiveis != 2 || combustiveis != 3 || combustiveis != 4) {
+				throw new ValorInvalidoException();
 			}
-			this.combustiveis = combustiveis.trim();
+			this.combustiveis = combustiveis;
 		
 		}
-		catch(DescricaoEmBrancoException e) {
+		catch(Exception e) {
 			throw e;
 		}
 	}
@@ -240,7 +240,7 @@ public class Veiculo{
 	public static Veiculo init() {
 		Veiculo carros  = null;
 		double tanque;
-		int anoFab, anoMod;
+		int anoFab, anoMod, tipo;
 		try {
 			carros = new Veiculo();
 			carros.setMarca(JOptionPane.showInputDialog("Marca do carro:"));	
@@ -250,12 +250,14 @@ public class Veiculo{
 			anoMod = Integer.parseInt(JOptionPane.showInputDialog("Ano do modelo:"));
 			carros.setAnoModelo(anoMod);
 			carros.setMotorizacao(JOptionPane.showInputDialog("Motorização:"));
-			carros.setCombustiveis(JOptionPane.showInputDialog("Combustiveis aceitos:\n" + ""
-																+ "	1) Gasolina\n"
+			
+			tipo = Integer.parseInt(JOptionPane.showInputDialog("Combustiveis aceitos:\n" + ""
+																+ "1) Gasolina\n"
 																+ "2) Alcool\n"
 																+ "3) Diesel\n"
-																+ "4) Flex [Gasolina ou Alcool]\n"
+																+ "4) Flex [Gasolina e Alcool]\n"
 																+ "Escolha um numero acima."));
+			carros.setCombustiveis(tipo);
 			carros.setCor(JOptionPane.showInputDialog("Cor:"));
 			carros.setPlaca(JOptionPane.showInputDialog("Placa:"));
 			tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));

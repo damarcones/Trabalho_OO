@@ -53,6 +53,7 @@ public class RegistrarAbastecimento extends Despesa {
             if(TipoCombustivel != 1 || TipoCombustivel != 2 || TipoCombustivel != 3) {
 				throw new ValorInvalidoException();
             }
+            
         }catch(Exception e){
             throw e;
         }
