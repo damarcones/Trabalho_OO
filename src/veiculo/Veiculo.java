@@ -35,8 +35,12 @@ public class Veiculo{
         public ArrayList<RegistrarTaxa> getTAX() {
 			return tax;
 		}
+        
 
-		
+        public ArrayList<Despesa> getDespesas() {
+			return despesas;
+		}
+
 
 	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
@@ -244,7 +248,18 @@ public class Veiculo{
 	public void addDespesa(Despesa d) {
 		this.despesas.add(d);
 	}
-
+	
+	public void addAbs(RegistrarAbastecimento abs) {
+		this.abs.add(abs);
+	}
+	
+	public void addMA(RegistrarManutencao ma) {
+		this.ma.add(ma);
+	}
+	
+	public void addtax(RegistrarTaxa tax) {
+		this.tax.add(tax);
+	}
 	public String toString() {
 		return "VEICULO \nMarca: " + marca
 						+ "\nModelo: " + modelo
@@ -257,7 +272,10 @@ public class Veiculo{
 						+ "\nPlaca: " + placa
 						+ "\nRenavam: " + renavam
 						+ "\n"
-						+ "\n----DESPESAS----" + despesas;
+						+ "\n----DESPESAS----" + despesas
+						+ "\n----DESPESAS----" + abs
+						+ "\n--- MANUTENCAO---- " + ma
+						+ "\n-----TAXAS----" + tax;
 	}
 	
 	
