@@ -66,6 +66,7 @@ public class Despesa {
     	} 
     	
 ///////////////////////INIT/////////////////////////	
+	//// ENTRDA DOS DADOS
     	public static Despesa init() {
     		Despesa despesas = null;
     		double valor;
@@ -88,7 +89,7 @@ public class Despesa {
 			return despesas;
     	}
 
-
+	//METODO PARA IMPRIMIR OS DADOS COLOCADOS
     	public String toString() {
     		return "\nNome: " + nome
     				+ "\nData: " + data
