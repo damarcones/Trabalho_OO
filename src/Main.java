@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.util.*;
 import registros.*;
 
-public class Main  {
+public class Main {
 	
 	private final static String MENU_INICIAL = "MENU DE OPCOES\n"+ 
 			"1) Cadastrar Veiculo;\n"+

@@ -4,10 +4,14 @@ import registros.*;
 import veiculo.*;
 
 public class RelatorioSimples {
-	public void GerarRelatorioAbastecimento() {
-		
-	}
+	public String abastecimentos;
 	
+	
+	
+	
+	public void GerarRelatorioAbastecimento() {
+
+	}
 	public void GerarRelatorioTaxa() {
 		
 	}
