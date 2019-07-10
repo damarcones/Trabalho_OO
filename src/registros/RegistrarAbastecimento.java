@@ -122,7 +122,11 @@ public class RegistrarAbastecimento extends Despesa {
     	try {
     		abastecimento = new RegistrarAbastecimento();
     		abastecimento.setNome("Abastecimento\n");
-    		abastecimento.setTipoCombustivel(JOptionPane.showInputDialog("Combustivel Abastecido"));
+    		abastecimento.setTipoCombustivel(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido"+
+    																		"1) Gasolina\n"+
+    																		"2) Acool\n"+
+    																		"3) Diesel\n"+
+    																		"Digite um numero."));
     		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?"));
     		abastecimento.setTanqueCheio(tanque);
     		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
