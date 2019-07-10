@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import registros.*;
 import veiculo.*;
 
-public class RelatorioSimples {
+public class RelatorioSimples  extends Despesa{
 	public String abastecimentos;
 		
 	

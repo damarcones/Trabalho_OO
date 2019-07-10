@@ -18,7 +18,7 @@ public class Veiculo{
 	private String placa;
 	private String renavam;
 	private ArrayList <Despesa> despesas = new ArrayList();  //criando o array list pra armazenar os n veiculos e as n despesas 
-        private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
+    private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
 
 	
 
