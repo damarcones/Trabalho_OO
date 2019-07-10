@@ -6,7 +6,7 @@ import excecoes.*;
 import veiculo.Veiculo;
 
 public class RegistrarAbastecimento extends Despesa {
-    private String TipoCombustivel;
+    private int TipoCombustivel;
     private double ValorCombustivel;
     private int KmAtual,KmAnterior;
     private int TanqueCheio;
@@ -44,14 +44,14 @@ public class RegistrarAbastecimento extends Despesa {
 	
  
 
-    public String getTipoCombustivel() {
+    public int getTipoCombustivel() {
         return TipoCombustivel;
     }
 
-    public void setTipoCombustivel(String TipoCombustivel) throws DescricaoEmBrancoException {
+    public void setTipoCombustivel(int TipoCombustivel) throws ValorInvalidoException {
         try{
-            if(TipoCombustivel.trim().equalsIgnoreCase("")||TipoCombustivel.isEmpty()||TipoCombustivel == null) {
-				throw new DescricaoEmBrancoException();
+            if(TipoCombustivel != 1 || TipoCombustivel != 2 || TipoCombustivel != 3) {
+				throw new ValorInvalidoException();
             }
         }catch(Exception e){
             throw e;
@@ -116,17 +116,18 @@ public class RegistrarAbastecimento extends Despesa {
     
     public static RegistrarAbastecimento init() {
     	RegistrarAbastecimento abastecimento = null;
-    	int tanque;
+    	int tanque, tipo;
     	double valorCombustivel, valorTanque, litros;
     	int kmAtual;
     	try {
     		abastecimento = new RegistrarAbastecimento();
     		abastecimento.setNome("Abastecimento\n");
-    		abastecimento.setTipoCombustivel(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido"+
+    		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido"+
     																		"1) Gasolina\n"+
     																		"2) Acool\n"+
     																		"3) Diesel\n"+
     																		"Digite um numero."));
+    		abastecimento.setTipoCombustivel(tipo);
     		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?"));
     		abastecimento.setTanqueCheio(tanque);
     		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
