@@ -20,17 +20,27 @@ public class Veiculo{
 	private int kmDoUltimoAbastecimento;
 	private ArrayList <Despesa> despesas = new ArrayList();  //criando o array list pra armazenar os n veiculos e as n despesas 
     private ArrayList <RegistrarAbastecimento> abs = new ArrayList();
+	private ArrayList <RegistrarManutencao> ma = new ArrayList();
+	private ArrayList <RegistrarTaxa>  tax= new ArrayList();
 
-	
 
-	public ArrayList<RegistrarAbastecimento> getAbs() {
+		public ArrayList<RegistrarAbastecimento> getAbs() {
 			return abs;
+		}
+
+        public ArrayList<RegistrarManutencao> getMA() {
+			return ma;
+		}
+        
+        public ArrayList<RegistrarTaxa> getTAX() {
+			return tax;
 		}
 
 		
 
 	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
+		this.kmDoUltimoAbastecimento = 0;
 	}
 	
 ///////////////////////////////////MARCA//////////////////////////////////////
@@ -278,12 +288,16 @@ public class Veiculo{
 			tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
 			carros.setCapacidadeTanque(tanque);
 			carros.setRenavam(JOptionPane.showInputDialog("Renavam:"));
+			
+			
 		}catch(NumberFormatException e) {
 			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
+			
 		
 		}catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
 	}
+		
 			if(carros.getMarca() != null
 				&& carros.getModelo() != null
 				&& carros.getAnoFabricacao() != 0
@@ -296,8 +310,10 @@ public class Veiculo{
 				&& carros.getRenavam() != null)
 
 				break;
+			
 		}
 		return carros;
-	}
 	
+	
+}
 }

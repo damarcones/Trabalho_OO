@@ -43,9 +43,10 @@ public class RelatorioCustoDoKmRodado {
         return KmAnterior;
     }
 
-    public void setKmAnterior(int KmAnterior) {
-        this.KmAnterior = ra.KmAnterior();
-    }
+
+//    public void setKmAnterior(int KmAnterior) {
+//        this.KmAnterior = ra.KmAnterior();
+//    }
 
     public double getValor() {
         return valor;
