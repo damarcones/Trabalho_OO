@@ -296,12 +296,16 @@ public class Veiculo{
 			tanque = Double.parseDouble(JOptionPane.showInputDialog("Capacidade do tanque:"));
 			carros.setCapacidadeTanque(tanque);
 			carros.setRenavam(JOptionPane.showInputDialog("Renavam:"));
+			
+			
 		}catch(NumberFormatException e) {
 			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
+			
 		
 		}catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
 	}
+		
 			if(carros.getMarca() != null
 				&& carros.getModelo() != null
 				&& carros.getAnoFabricacao() != 0
@@ -314,8 +318,10 @@ public class Veiculo{
 				&& carros.getRenavam() != null)
 
 				break;
+			
 		}
 		return carros;
-	}
 	
+	
+}
 }
