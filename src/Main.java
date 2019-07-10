@@ -23,8 +23,11 @@ public class Main {
 			"Escolha uma opcao:\n";
 	
 	private final static String GERAR_RELATORIO = "GERAR RELATORIO\n"+
-			"1) Desempenho;\n"+
-			"2) Consumo;\n"+
+			"1) Relatorio simples de abastecimentos;\n"+
+			"2) Relatorio simples de manutencoes;\n"+
+			"3) Relatorio simples de taxas;\n"+
+			"4) Relatorio de desempenho: Consumo;\n"+
+			"5) Relatorio de desempenho: Custo por Km;\n"+
 			"0) Sair.\n"+
 			"Escolha uma opcao:\n";
 	
@@ -155,11 +158,11 @@ public class Main {
 								break;
 						
 						case 2: //gerar relatorio simples de manutencao
-							
+							JOptionPane.showMessageDialog(null,RelatorioSimples.GerarRelatorioManutencao(veiculos.get(veiculos.size() -1).getMA()));
 								break;
 								
 						case 3: //gerar relatorio simples de taxa
-							
+							JOptionPane.showMessageDialog(null,RelatorioSimples.GerarRelatorioTaxa(veiculos.get(veiculos.size() -1).getTAX()));
 								break;
 								
 						case 4: //gerar relatorio de desempenho: consumo do veiculo
