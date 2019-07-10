@@ -44,12 +44,16 @@ public class RegistrarAbastecimento extends Despesa {
         return TipoCombustivel;
     }
 
-    public void setTipoCombustivel(String TipoCombustivel) throws DescricaoEmBrancoException {
+    public void setTipoCombustivel(String TipoCombustivel) throws CombustivelInvalidoException, DescricaoEmBrancoException {
         try{
             if(TipoCombustivel.trim().equalsIgnoreCase("")||TipoCombustivel.isEmpty()||TipoCombustivel == null) {
 				throw new DescricaoEmBrancoException();
             }
-        }catch(Exception e){
+            if(TipoCombustivel.equalsIgnoreCase(v.getCombustiveis())){
+                this.TipoCombustivel=TipoCombustivel;
+            }
+            throw new CombustivelInvalidoException();
+        }catch(CombustivelInvalidoException e){
             throw e;
         }
     }
