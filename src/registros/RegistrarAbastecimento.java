@@ -14,7 +14,7 @@ public class RegistrarAbastecimento extends Despesa {
     Veiculo v;
     
     
-    public RegistrarAbastecimento()throws DescricaoEmBrancoException{
+    public RegistrarAbastecimento(){
    	 
 	}
  
