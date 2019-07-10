@@ -22,6 +22,12 @@ public class Veiculo{
 
 	
 
+	public ArrayList<RegistrarAbastecimento> getAbs() {
+			return abs;
+		}
+
+		
+
 	public Veiculo() throws DescricaoEmBrancoException{
 		//CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
 	}

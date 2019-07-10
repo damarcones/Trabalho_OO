@@ -2,28 +2,55 @@
 package relatorio;
 import excecoes.DescricaoEmBrancoException;
 import javax.swing.JOptionPane;
-
 import registros.*;
 import veiculo.*;
+import java.util.ArrayList;
+
 
 public class RelatorioSimples {
-	public String abastecimentos;
-		
-	
-	
-	public void GerarRelatorioAbastecimento() throws DescricaoEmBrancoException{
-            //RegistrarAbastecimento ga = new RegistrarAbastecimento() ;
-            //ga.toString();
 
+/*********************PARA GERAR O RELATORIO DE TODOS OS ABASTECIMENTOS*********************/
+	//RelatorioSimples.GerarRelatorioAbastecimento(abs);
+	public static String  GerarRelatorioAbastecimento(ArrayList<RegistrarAbastecimento> abs){
+            StringBuilder relatorio = new StringBuilder();
+            	if(abs.size() == 0)
+            		relatorio.append("Não há dados para gerar um relatório!");
+            	else {
+            		for(RegistrarAbastecimento a : abs) {
+            			relatorio.append( "\n"+ a.toString());
+            		}
+            	}
+            
+            return relatorio.toString();
 	}
+	
+/*********************PARA GERAR O RELATORIO DE TODOS OS ABASTECIMENTOS*********************/
 	public void GerarRelatorioTaxa() throws DescricaoEmBrancoException {
-		//RegistrarTaxa r= new RegistrarTaxa(); 
-            //gr.toString();
+//		StringBuilder relatorio = new StringBuilder();
+//    	if(abs.size() == 0)
+//    		relatorio.append("Não há relatório");
+//    	else {
+//    		for(RegistrarAbastecimento a : abs) {
+//    			relatorio.append( "\n"+ a.toString());
+//    		}
+//    	}
+//    
+//    return relatorio.toString();	
 	}
 
+/*********************PARA GERAR O RELATORIO DE TODOS AS MANUTENCOES*********************/	
 	public void GerarRelatorioManutencao() throws DescricaoEmBrancoException {
-	//RegistrarManutencao rm = new RegistrarManutencao();
-        //rm.toString();
+//		public void GerarRelatorioTaxa() throws DescricaoEmBrancoException {
+//			StringBuilder relatorio = new StringBuilder();
+//	    	if(abs.size() == 0)
+//	    		relatorio.append("Não há relatório");
+//	    	else {
+//	    		for(RegistrarAbastecimento a : abs) {
+//	    			relatorio.append( "\n"+ a.toString());
+//	    		}
+//	    	}
+//	    
+//	    return relatorio.toString();	
 	}
 
 }
