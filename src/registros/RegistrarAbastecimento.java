@@ -13,17 +13,9 @@ public class RegistrarAbastecimento extends Despesa {
     private double litros;
     Veiculo v;
     
-    public RegistrarAbastecimento(Veiculo v, Despesa d) {
+    public RegistrarAbastecimento(Veiculo v) {
 		this.v = v;
 		this.KmAnterior = v.getKmDoUltimoAbastecimento();
-		try{
-    		setData(d.getData());
-    		setNome(d.getNome());
-    		setValorTotal(d.getValorTotal());
-    	}
-    	catch(Exception e) {
-    		e.printStackTrace();
-    	}
 	}
 
 
@@ -87,10 +79,10 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setValorCombustivel(double ValorCombustivel) throws ValorInvalidoException {
         try{
-            if(ValorCombustivel>0){
-                this.ValorCombustivel=ValorCombustivel;
+            if(ValorCombustivel <= 0){
+            	throw new ValorInvalidoException();
             }
-            throw new ValorInvalidoException();
+            this.ValorCombustivel=ValorCombustivel;
            
         }catch(ValorInvalidoException e){
             throw e ;
@@ -139,10 +131,10 @@ public class RegistrarAbastecimento extends Despesa {
     	RegistrarAbastecimento abastecimento = null;
     	int tanque, tipo;
     	double valorCombustivel, valorTanque, litros;
-    	int kmAtual;
+    	int kmAtual = 0;
     	while(true) {
     	try {
-    		abastecimento = new RegistrarAbastecimento(v, Despesa.init());
+    		abastecimento = new RegistrarAbastecimento(v);
     		abastecimento.setNome("Abastecimento\n");
     		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido\n"+
     																		"1) Gasolina\n"+
@@ -172,6 +164,7 @@ public class RegistrarAbastecimento extends Despesa {
     			&& abastecimento.getTanqueCheio() != 0 && abastecimento.getLitros() != 0)
     		break;
     }
+    	v.setKmDoUltimoAbastecimento(kmAtual);
     	return abastecimento;
     }
     
