@@ -96,7 +96,7 @@ public class RegistrarAbastecimento extends Despesa {
 
     public void setTanqueCheio(int TanqueCheio) throws ValorInvalidoException  {
         try{
-            if(TanqueCheio == 0 || TanqueCheio == 0){//<<<<<========== MUdar ta errado
+            if(TanqueCheio == 1 || TanqueCheio == -1){//<<<<<========== MUdar ta errado
                this.TanqueCheio=TanqueCheio;
             }
             throw new ValorInvalidoException();
@@ -119,6 +119,7 @@ public class RegistrarAbastecimento extends Despesa {
     	int tanque, tipo;
     	double valorCombustivel, valorTanque, litros;
     	int kmAtual;
+    	while(true) {
     	try {
     		abastecimento = new RegistrarAbastecimento();
     		abastecimento.setNome("Abastecimento\n");
@@ -128,14 +129,14 @@ public class RegistrarAbastecimento extends Despesa {
     																		"3) Diesel\n"+
     																		"Digite um numero."));
     		abastecimento.setTipoCombustivel(tipo);
-    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?"));
+    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?\n 1 para sim, -1 para não"));
     		abastecimento.setTanqueCheio(tanque);
     		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
     		abastecimento.setKmAtual(kmAtual);
     		valorCombustivel = Double.parseDouble(JOptionPane.showInputDialog("Valor do litro"));
     		abastecimento.setValorCombustivel(valorCombustivel);
     		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento"));
-    		abastecimento.setValorCombustivel(valorTanque);
+    		abastecimento.setValorTotal(valorTanque);
     		litros = Double.parseDouble(JOptionPane.showInputDialog("Quantidade de litros"));
     		abastecimento.setLitros(litros);	
     	}
@@ -145,6 +146,12 @@ public class RegistrarAbastecimento extends Despesa {
 		catch(Exception e){
 				JOptionPane.showMessageDialog(null,e);
 		}
+    	if(abastecimento.getTipoCombustivel() != 0 && abastecimento.getKmAtual() != 0
+    			&& abastecimento.getValorCombustivel() != 0 && abastecimento.getValorTotal() != 0
+    			&& abastecimento.getTanqueCheio() != 0 && abastecimento.getLitros() != 0)
+    		break;
+    }
     	return abastecimento;
     }
+    
 }
