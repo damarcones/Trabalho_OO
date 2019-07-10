@@ -40,15 +40,18 @@ public class RegistrarManutencao extends Despesa{
     	public static RegistrarManutencao init() {
     		RegistrarManutencao manutencao = null;
     		int km;
-    		try {
-    			manutencao = new RegistrarManutencao(Despesa.init());
-    			km = Integer.parseInt(JOptionPane.showInputDialog("Informe o Km atual"));
-    			manutencao.setKmAtual(km);
+    		while(true) {
+	    		try {
+	    			manutencao = new RegistrarManutencao(Despesa.init());
+	    			km = Integer.parseInt(JOptionPane.showInputDialog("Informe o Km atual"));
+	    			manutencao.setKmAtual(km);
+	    		}
+	    		catch(Exception e) {
+	    			JOptionPane.showMessageDialog(null,e);
+	    		}
+	    		if(manutencao.getKmAtual() != 0)
+	    			break;
     		}
-    		catch(Exception e) {
-    			JOptionPane.showMessageDialog(null,e);
-    		}
-    		
     		return manutencao;
     	}
 
