@@ -1,7 +1,5 @@
 //RELATORIO QUE MOSTRA TODOS OS REGISTROS DE TAXAS, MANUTENCOES E ABASTECIMENTOS DE UM VEICULO
 package relatorio;
-import excecoes.DescricaoEmBrancoException;
-import javax.swing.JOptionPane;
 import registros.*;
 import veiculo.*;
 import java.util.ArrayList;
