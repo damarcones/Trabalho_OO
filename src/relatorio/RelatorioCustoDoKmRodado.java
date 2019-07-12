@@ -1,8 +1,9 @@
 //RELATORIO QUE INFORMA TODAS AS DESPESAS DO VEICULO, DIVIDIDO PELO TOTAL DE KM RODADOS
 package relatorio;
-
+import javax.swing.JOptionPane;
 import registros.*;
 import excecoes.*;
+import java.util.ArrayList;
 
 public class RelatorioCustoDoKmRodado {
 	// private Desempenho.Abastecimento
@@ -12,6 +13,9 @@ public class RelatorioCustoDoKmRodado {
 	private int KmAnterior;
 	private double valor;
 	RegistrarAbastecimento ra;
+	RegistrarManutencao rm;
+        RegistrarTaxa rt;
+
 
 	public void MediaConsumo() throws DoisTanquesCheiosException {
 
@@ -58,4 +62,11 @@ public class RelatorioCustoDoKmRodado {
 		this.valor = valor;
 	}
 
-}
+	public String toString() {
+        return "\nABASTECIMENTO2: "
+        		+ "\nCusto por Km: "+(ra.getValorTotal()+rm.getValorTotal()+rt.getValorTotal())
+                /(ra.getKmAtual()-ra.getKmAnterior()) ;
+    		}
+	}
+
+
