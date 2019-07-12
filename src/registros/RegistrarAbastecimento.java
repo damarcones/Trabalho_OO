@@ -6,20 +6,17 @@ import excecoes.*;
 import veiculo.Veiculo;
 
 public class RegistrarAbastecimento extends Despesa {
-
-	private int TipoCombustivel;
-	private double ValorCombustivel;
-	private int KmAtual, KmAnterior;
-	private int TanqueCheio;
-
-	Veiculo v;
-
-
+    private int TipoCombustivel;
+    private double ValorCombustivel;
+    private int KmAtual,KmAnterior;
+    private int TanqueCheio, UltimoTanque;
+    private double litros;
+    Veiculo v;
+    
     public RegistrarAbastecimento(Veiculo v) {
-
 		this.v = v;
 		this.KmAnterior = v.getKmDoUltimoAbastecimento();
-		
+		//this.UltimoTanque = v.getTanqueDoUltimoAbastecimento();
 	}
 
 	public RegistrarAbastecimento() {
@@ -49,7 +46,6 @@ public class RegistrarAbastecimento extends Despesa {
 			throw e;
 		}
 	}
-
 
     public double getValorCombustivel() {
         return ValorCombustivel;
@@ -96,9 +92,23 @@ public class RegistrarAbastecimento extends Despesa {
             throw e;
         }
     }
+    public int getKmAnterior() {
+		return KmAnterior;
+	}
 
- 
-    //VISUALIZAR ENTRADA DE ABASTECIMENTO
+	public void setKmAnterior(int kmAnterior) {
+		KmAnterior = kmAnterior;
+	}
+
+	public int getUltimoTanque() {
+		return UltimoTanque;
+	}
+
+	public void setUltimoTanque(int ultimoTanque) {
+		UltimoTanque = ultimoTanque;
+	}
+
+	//VISUALIZAR ENTRADA DE ABASTECIMENTO
     public String toString() {
         return "\nABASTECIMENTO: "
         		+ "\nTipo do combustivel: " + TipoCombustivel
@@ -106,8 +116,12 @@ public class RegistrarAbastecimento extends Despesa {
     			+ "\nQuilometragem atual: " + KmAtual
     			+ "\nTanque cheio? " + TanqueCheio;
     		}
-    
-
+	
+	    public String toString2() {
+        return "\nCONSUMO: "
+                 +"\nKm/L = "+ (KmAtual-KmAnterior)/v.getCapacidadeTanque();
+    		}
+	
 	//ENTRADA DOS VALOES EM ABASTECIMENTO
 	public static RegistrarAbastecimento init(Veiculo v) {
     	RegistrarAbastecimento abastecimento = null;
@@ -115,40 +129,39 @@ public class RegistrarAbastecimento extends Despesa {
     	double valorCombustivel, valorTanque, litros;
     	int kmAtual = 0;
     	while(true) {
-    	try {
-    		abastecimento = new RegistrarAbastecimento(v);
-    		abastecimento.setNome("Abastecimento\n");
-    		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido\n"+
-    																		"1) Gasolina\n"+
-    																		"2) Alcool\n"+
-    																		"3) Diesel\n"+
-    																		"Digite um numero."));
-    		abastecimento.setTipoCombustivel(tipo);
-    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?\n 1 para sim, -1 para n�o"));
-    		abastecimento.setTanqueCheio(tanque);
-    		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
-    		abastecimento.setKmAtual(kmAtual);
-    		valorCombustivel = Double.parseDouble(JOptionPane.showInputDialog("Valor do litro"));
-    		abastecimento.setValorCombustivel(valorCombustivel);
-    		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento"));
-    		abastecimento.setValorTotal(valorTanque);
-
-    	}
-	    catch(NumberFormatException e) {
-			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
-	    }
-		catch(Exception e){
-				JOptionPane.showMessageDialog(null,e);
-		}
-    	if(abastecimento.getTipoCombustivel() != 0 && abastecimento.getKmAtual() != 0
-    			&& abastecimento.getValorCombustivel() != 0 && abastecimento.getValorTotal() != 0
-    			&& abastecimento.getTanqueCheio() != 0 )
+	    	try {
+	    		abastecimento = new RegistrarAbastecimento(v);
+	    		abastecimento.setNome("Abastecimento\n");
+	    		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido\n"+
+	    																		"1) Gasolina\n"+
+	    																		"2) Acool\n"+
+	    																		"3) Diesel\n"+
+	    																		"Digite um numero."));
+	    		abastecimento.setTipoCombustivel(tipo);
+	    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?\n 1 para sim, -1 para n�o"));
+	    		abastecimento.setTanqueCheio(tanque);
+	    		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
+	    		abastecimento.setKmAtual(kmAtual);
+	    		valorCombustivel = Double.parseDouble(JOptionPane.showInputDialog("Valor do litro"));
+	    		abastecimento.setValorCombustivel(valorCombustivel);
+	    		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento"));
+	    		abastecimento.setValorTotal(valorTanque);
+	//    		litros = Double.parseDouble(JOptionPane.showInputDialog("Quantidade de litros"));
+	//    		abastecimento.setLitros(litros);	
+	    	}
+		    catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
+		    }
+			catch(Exception e){
+					JOptionPane.showMessageDialog(null,e);
+			}
+		if(abastecimento.getTipoCombustivel() != 0 && abastecimento.getKmAtual() != 0
+		&& abastecimento.getValorCombustivel() != 0 && abastecimento.getValorTotal() != 0
+		&& abastecimento.getTanqueCheio() != 0 )
     		break;
-    }
-    	v.setKmDoUltimoAbastecimento(kmAtual);
-    	v.setTanqueDoUltimoAbastecimento(tanque);
-    	return abastecimento;
-    }
-    
-
+    	}
+	v.setKmDoUltimoAbastecimento(kmAtual);
+	//v.setTanqueDoUltimoAbastecimento(tanque);
+	return abastecimento;
+	}
 }
