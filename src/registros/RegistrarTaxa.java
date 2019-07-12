@@ -5,8 +5,23 @@ import excecoes.*;
 
 public class RegistrarTaxa extends Despesa{
     private String CategoriaTaxa;
+    private int kmAtual;
     
-    public void RegistroTaxa() throws DescricaoEmBrancoException{
+    public int getKmAtual() {
+		return kmAtual;
+	}
+	public void setKmAtual(int kmAtual) throws DescricaoEmBrancoException {
+		try {
+			if(kmAtual == 0) {
+				throw new DescricaoEmBrancoException();
+		}
+		this.kmAtual = kmAtual;
+		}
+		catch(DescricaoEmBrancoException e) {
+			throw e;
+		}
+	}
+	public void RegistroTaxa() throws DescricaoEmBrancoException{
         
     }
     public RegistrarTaxa(Despesa d) {
@@ -39,11 +54,13 @@ public class RegistrarTaxa extends Despesa{
     }
     public static RegistrarTaxa init() {
 		RegistrarTaxa taxa = null;
+		int km;
 		while(true) {
 			try {
 				taxa = new RegistrarTaxa(Despesa.init());
 				taxa.setCategoriaTaxa(JOptionPane.showInputDialog("A despesa é imposto ou particular?: "));
-				
+				km = Integer.parseInt(JOptionPane.showInputDialog("Informe o Km atual"));
+				taxa.setKmAtual(km);
 			} catch(Exception e) {
 				JOptionPane.showMessageDialog(null,e);
 			}

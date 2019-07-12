@@ -19,10 +19,9 @@ public class Veiculo {
 	private String placa;
 	private String renavam;
 	private int kmDoUltimoAbastecimento;
-	private ArrayList<Despesa> despesas = new ArrayList(); // criando o array list pra armazenar as n despesas do
-															// veiculo
-	private ArrayList<RegistrarAbastecimento> abs = new ArrayList(); // criando o array list pra armazenar os n
-																		// vabastecimentos
+	
+	private ArrayList<Despesa> despesas = new ArrayList(); // criando o array list pra armazenar as n despesas do														// veiculo
+	private ArrayList<RegistrarAbastecimento> abs = new ArrayList(); // criando o array list pra armazenar os n abastecimentos
 	private ArrayList<RegistrarManutencao> ma = new ArrayList(); // criando o array list pra armazenar as n manutencoes
 	private ArrayList<RegistrarTaxa> tax = new ArrayList(); // criando o array list pra armazenar as n taxas
 
@@ -48,7 +47,36 @@ public class Veiculo {
 		// CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
 		this.kmDoUltimoAbastecimento = 0;
 	}
-
+	public double valorRelTotal() {
+		double valor =0;
+		for(RegistrarAbastecimento a: abs)
+			valor += a.getValorTotal();
+		for(RegistrarManutencao m : ma)
+			valor += m.getValorTotal();
+		for(RegistrarTaxa t : tax)
+			valor += t.getValorTotal(); 
+		
+		return valor;
+		
+	}
+	public int maiorKm() {
+		int kmMaior = 0;
+		for(RegistrarAbastecimento a: abs) {
+			if(kmMaior <= a.getKmAtual())
+				kmMaior = a.getKmAtual();
+		}
+		for(RegistrarManutencao m : ma) {
+			if(kmMaior <= m.getKmAtual())
+				kmMaior = m.getKmAtual();
+		}
+		for(RegistrarTaxa t : tax) {
+			if(kmMaior <= t.getKmAtual())
+				kmMaior = t.getKmAtual();
+		}
+		return kmMaior;
+	}
+	
+	
 ///////////////////////////////////MARCA//////////////////////////////////////
 	public String getMarca() {
 		return marca;

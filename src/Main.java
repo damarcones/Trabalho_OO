@@ -163,8 +163,7 @@ public class Main {
 								break;
 
 							case 2: // gerar relatorio simples de manutencao
-								JOptionPane.showMessageDialog(null, RelatorioSimples
-										.GerarRelatorioManutencao(veiculos.get(i).getMA()));
+								JOptionPane.showMessageDialog(null, RelatorioSimples.GerarRelatorioManutencao(veiculos.get(i).getMA()));
 								break;
 
 							case 3: // gerar relatorio simples de taxa
@@ -178,6 +177,8 @@ public class Main {
 								break;
 
 							case 5: // gerar relatorio de desempenho: custo do km rodado
+								JOptionPane.showMessageDialog(null, veiculos.get(i).valorRelTotal());
+								JOptionPane.showMessageDialog(null,veiculos.get(i).maiorKm());
 
 								break;
 

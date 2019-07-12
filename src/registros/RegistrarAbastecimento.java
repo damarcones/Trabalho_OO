@@ -10,7 +10,7 @@ public class RegistrarAbastecimento extends Despesa {
     private double ValorCombustivel;
     private int KmAtual,KmAnterior;
     private int TanqueCheio, UltimoTanque;
-    private double litros;
+    public double media;
     Veiculo v;
     
     public RegistrarAbastecimento(Veiculo v) {
@@ -121,7 +121,10 @@ public class RegistrarAbastecimento extends Despesa {
         return "\nCONSUMO: "
                  +"\nKm/L = "+ (KmAtual-KmAnterior)/v.getCapacidadeTanque();
     		}
-	
+	public double media() {
+		media = (KmAtual-KmAnterior)/v.getCapacidadeTanque();
+		return media;
+	}
 	//ENTRADA DOS VALOES EM ABASTECIMENTO
 	public static RegistrarAbastecimento init(Veiculo v) {
     	RegistrarAbastecimento abastecimento = null;

@@ -2,6 +2,7 @@
 package relatorio;
 import javax.swing.JOptionPane;
 import registros.*;
+import veiculo.Veiculo;
 import excecoes.*;
 import java.util.ArrayList;
 
@@ -12,9 +13,11 @@ public class RelatorioCustoDoKmRodado {
 	private int KmAtual;
 	private int KmAnterior;
 	private double valor;
+	
+	Veiculo v;
 	RegistrarAbastecimento ra;
 	RegistrarManutencao rm;
-        RegistrarTaxa rt;
+    RegistrarTaxa rt;
 
 
 	public void MediaConsumo() throws DoisTanquesCheiosException {
@@ -62,11 +65,12 @@ public class RelatorioCustoDoKmRodado {
 		this.valor = valor;
 	}
 
-	public String toString() {
-        return "\nABASTECIMENTO2: "
-        		+ "\nCusto por Km: "+(ra.getValorTotal()+rm.getValorTotal()+rt.getValorTotal())
-                /(ra.getKmAtual()-ra.getKmAnterior()) ;
-    		}
+//	public String toString() {
+//        return "\nABASTECIMENTO2: "
+//        		+ "\nCusto por Km: "+(ra.getValorTotal()+rm.getValorTotal()+rt.getValorTotal())
+//                /(ra.getKmAtual()-ra.getKmAnterior()) ;
+//    		}
+
 	}
 
 
