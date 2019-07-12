@@ -110,11 +110,11 @@ public class RegistrarAbastecimento extends Despesa {
 
 	//VISUALIZAR ENTRADA DE ABASTECIMENTO
     public String toString() {
-        return "\nABASTECIMENTO: "
+        return "ABASTECIMENTO: "
         		+ "\nTipo do combustivel: " + TipoCombustivel
             	+ "\nValor do combustivel: " + ValorCombustivel
     			+ "\nQuilometragem atual: " + KmAtual
-    			+ "\nTanque cheio? " + TanqueCheio;
+    			+ "\nTanque cheio? " + TanqueCheio + "\n";
     		}
 	
 	    public String toString2() {
@@ -129,7 +129,7 @@ public class RegistrarAbastecimento extends Despesa {
 	public static RegistrarAbastecimento init(Veiculo v) {
     	RegistrarAbastecimento abastecimento = null;
     	int tanque = 0, tipo;
-    	double valorCombustivel, valorTanque, litros;
+    	double valorCombustivel, valorTanque;
     	int kmAtual = 0;
     	while(true) {
 	    	try {
@@ -137,23 +137,23 @@ public class RegistrarAbastecimento extends Despesa {
 	    		abastecimento.setNome("Abastecimento\n");
 	    		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido\n"+
 	    																		"1) Gasolina\n"+
-	    																		"2) Acool\n"+
+	    																		"2) Alcool\n"+
 	    																		"3) Diesel\n"+
 	    																		"Digite um numero."));
 	    		abastecimento.setTipoCombustivel(tipo);
-	    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?\n 1 para sim, -1 para n�o"));
+	    		tanque = Integer.parseInt(JOptionPane.showInputDialog("Tanque cheio?\n 1 para sim, -1 para nao"));
 	    		abastecimento.setTanqueCheio(tanque);
-	    		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual"));
+	    		kmAtual = Integer.parseInt(JOptionPane.showInputDialog("Quilometragem atual:"));
 	    		abastecimento.setKmAtual(kmAtual);
-	    		valorCombustivel = Double.parseDouble(JOptionPane.showInputDialog("Valor do litro"));
+	    		valorCombustivel = Double.parseDouble(JOptionPane.showInputDialog("Valor do litro:"));
 	    		abastecimento.setValorCombustivel(valorCombustivel);
-	    		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento"));
+	    		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento:"));
 	    		abastecimento.setValorTotal(valorTanque);
 	//    		litros = Double.parseDouble(JOptionPane.showInputDialog("Quantidade de litros"));
 	//    		abastecimento.setLitros(litros);	
 	    	}
 		    catch(NumberFormatException e) {
-				JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
+				JOptionPane.showMessageDialog(null	,"Digite um valor valido!");
 		    }
 			catch(Exception e){
 					JOptionPane.showMessageDialog(null,e);

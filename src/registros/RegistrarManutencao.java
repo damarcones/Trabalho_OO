@@ -44,7 +44,7 @@ public class RegistrarManutencao extends Despesa{
     		while(true) {
 	    		try {
 	    			manutencao = new RegistrarManutencao(Despesa.init());
-	    			km = Integer.parseInt(JOptionPane.showInputDialog("Informe o Km atual"));
+	    			km = Integer.parseInt(JOptionPane.showInputDialog("Informe a quilometragem atual"));
 	    			manutencao.setKmAtual(km);
 	    		}
 	    		catch(Exception e) {
@@ -57,8 +57,8 @@ public class RegistrarManutencao extends Despesa{
     	}
 
 		public String toString() {
-		return "\n\nMANUTENCAO:"
+		return "MANUTENCAO:"
 				+ super.toString()
-				+ "\nQuilometragem atual: " + kmAtual;
+				+ "\nQuilometragem atual: " + kmAtual + "\n";
 		} 
 }
