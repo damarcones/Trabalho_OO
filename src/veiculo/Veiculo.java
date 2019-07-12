@@ -47,7 +47,11 @@ public class Veiculo {
 		// CONSTRUINDO ARRAYLIST PARA LIGAR DESPESAS AO CARRO
 		this.kmDoUltimoAbastecimento = 0;
 	}
-	public double valorRelTotal() {
+	
+	
+///////////// RELATORIO DE CONSUMO POR KM RODADO/////////////////////
+	
+	public double valorRelTotal() {     //percorre todos os arraylists pra pegar os valores de cada despesa
 		double valor =0;
 		for(RegistrarAbastecimento a: abs)
 			valor += a.getValorTotal();
@@ -59,7 +63,7 @@ public class Veiculo {
 		return valor;
 		
 	}
-	public int maiorKm() {
+	public int maiorKm() {    //percorre todos os arraylists pra pegar a maior quilometragem
 		int kmMaior = 0;
 		for(RegistrarAbastecimento a: abs) {
 			if(kmMaior <= a.getKmAtual())
@@ -76,6 +80,7 @@ public class Veiculo {
 		return kmMaior;
 	}
 	
+
 	
 ///////////////////////////////////MARCA//////////////////////////////////////
 	public String getMarca() {
@@ -285,7 +290,8 @@ public class Veiculo {
 	
 //METODO DE POLIMORFISMO TOSTRING (SOBRESCRITA) 
 	public String toString() {
-		return "VEICULO \nMarca: " + marca
+		return "VEICULO\n"
+				+ "Marca: " + marca
 				+ "\nModelo: " + modelo
 				+ "\nAno de fabricacao: " + anoFabricacao
 				+ "\nAno do modelo: " + anoModelo
@@ -294,9 +300,7 @@ public class Veiculo {
 				+ "\nCombustiveis aceitos: " + combustiveis
 				+ "\nCor: " + cor
 				+ "\nPlaca: " + placa
-				+ "\nRenavam: " + renavam
-				+ "\n"
-				+ "\n----DESPESAS----";
+				+ "\nRenavam: \n" + renavam;
 	}
 	
 //METODO INICIALIZADOR INIT

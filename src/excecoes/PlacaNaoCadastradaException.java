@@ -10,7 +10,7 @@ public class PlacaNaoCadastradaException extends Exception {
 	}
 	
 	public String toString() {
-		return "Placa n�o cadastrada!\n"
-				+ "Por favor, digite uma placa v�lida";
+		return "Placa nao cadastrada!\n"
+				+ "Por favor, digite uma placa valida";
 	} 
 }

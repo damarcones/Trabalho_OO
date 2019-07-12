@@ -10,7 +10,7 @@ public class ValorInvalidoException extends Exception {
 	}
 	
 	public String toString() {
-		return "Valor informado é inválido!\n"
-				+ "Digite um valor válido";
+		return "Valor informado é invalido!\n"
+				+ "Digite um valor valido";
 	} 
 }

@@ -9,16 +9,28 @@ import registros.*;
 
 public class Main {
 
-	private final static String MENU_INICIAL = "MENU PRINCIPAL\n" + "1) Cadastrar Veiculo;\n"
-			+ "2) Registrar Despesa;\n" + "3) Gerar Relatorio;\n" + "0) Sair.\n" + "Escolha uma opcao:\n";
+	private final static String MENU_INICIAL = "MENU PRINCIPAL\n"
+											+ "1) Cadastrar Veiculo;\n"
+											+ "2) Registrar Despesa;\n"
+											+ "3) Gerar Relatorio;\n"
+											+ "0) Sair.\n"
+											+ "Escolha uma opcao:\n";
 
-	private final static String MENU_DESPESA = "REGISTRAR DESPESA\n" + "1) Abastecimento;\n" + "2) Manutencao;\n"
-			+ "3) Taxas;\n" + "0) Voltar.\n" + "Escolha uma opcao:\n";
+	private final static String MENU_DESPESA = "REGISTRAR DESPESA\n"
+											+ "1) Abastecimento;\n"
+											+ "2) Manutencao;\n"
+											+ "3) Taxas;\n"
+											+ "0) Voltar.\n"
+											+ "Escolha uma opcao:\n";
 
-	private final static String GERAR_RELATORIO = "GERAR RELATORIO\n" + "1) Relatorio simples de abastecimentos;\n"
-			+ "2) Relatorio simples de manutencoes;\n" + "3) Relatorio simples de taxas;\n"
-			+ "4) Relatorio de desempenho: Consumo;\n" + "5) Relatorio de desempenho: Custo por Km;\n" + "0) Voltar.\n"
-			+ "Escolha uma opcao:\n";
+	private final static String GERAR_RELATORIO = "GERAR RELATORIO\n"
+												+ "1) Relatorio simples de abastecimentos;\n"
+												+ "2) Relatorio simples de manutencoes;\n"
+												+ "3) Relatorio simples de taxas;\n"
+												+ "4) Relatorio de desempenho: Consumo;\n"
+												+ "5) Relatorio de desempenho: Custo por Km;\n"
+												+ "0) Voltar.\n"
+												+ "Escolha uma opcao:\n";
 
 	static ArrayList<Veiculo> veiculos = new ArrayList<>(); // criando uma arraylist do tipo veiculo
 	
@@ -87,7 +99,7 @@ public class Main {
 					int i = EnderecoDoCarro();
 					if(i == -1) /* Para certeza de que o endereço não vai passar caso não encontre a placa do carro*/
 						break;
-					JOptionPane.showMessageDialog(null, "O veiculo de placa " + veiculos.get(i).getPlaca() + "cadastrado");
+					JOptionPane.showMessageDialog(null, "O veiculo de placa " + veiculos.get(i).getPlaca() + " esta cadastrado!");
 					int opcaoDespesa = -1;
 					do {
 						try {
@@ -128,7 +140,7 @@ public class Main {
 								break;
 
 							default:
-								JOptionPane.showMessageDialog(null, " Digite um numero valido!");
+								JOptionPane.showMessageDialog(null, "Digite um numero valido!");
 
 							}
 						}
@@ -183,7 +195,7 @@ public class Main {
 								break;
 
 							default:
-								JOptionPane.showMessageDialog(null, " Digite um numero valido!");
+								JOptionPane.showMessageDialog(null, "Digite um numero valido!");
 							}
 						}
 
@@ -199,7 +211,7 @@ public class Main {
 					break;
 
 				default:
-					JOptionPane.showMessageDialog(null, " Digite um numero valido!");
+					JOptionPane.showMessageDialog(null, "Digite um numero valido!");
 					break;
 
 				}
