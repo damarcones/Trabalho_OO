@@ -177,8 +177,8 @@ public class Main {
 								break;
 
 							case 5: // gerar relatorio de desempenho: custo do km rodado
-								JOptionPane.showMessageDialog(null, veiculos.get(i).valorRelTotal());
-								JOptionPane.showMessageDialog(null,veiculos.get(i).maiorKm());
+								JOptionPane.showMessageDialog(null, "Custo por Km Rodado\n"+veiculos.get(i).valorRelTotal()/veiculos.get(i).maiorKm());
+							//	JOptionPane.showMessageDialog(null,veiculos.get(i).maiorKm());
 
 								break;
 
