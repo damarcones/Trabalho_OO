@@ -106,6 +106,7 @@ public class RegistrarAbastecimento extends Despesa {
     			+ "\nQuilometragem atual: " + KmAtual
     			+ "\nTanque cheio? " + TanqueCheio;
     		}
+    
 
 	//ENTRADA DOS VALOES EM ABASTECIMENTO
 	public static RegistrarAbastecimento init(Veiculo v) {
@@ -119,7 +120,7 @@ public class RegistrarAbastecimento extends Despesa {
     		abastecimento.setNome("Abastecimento\n");
     		tipo = Integer.parseInt(JOptionPane.showInputDialog("Selecione o Combustivel Abastecido\n"+
     																		"1) Gasolina\n"+
-    																		"2) Acool\n"+
+    																		"2) Alcool\n"+
     																		"3) Diesel\n"+
     																		"Digite um numero."));
     		abastecimento.setTipoCombustivel(tipo);
@@ -131,8 +132,7 @@ public class RegistrarAbastecimento extends Despesa {
     		abastecimento.setValorCombustivel(valorCombustivel);
     		valorTanque = Double.parseDouble(JOptionPane.showInputDialog("Valor total do abastecimento"));
     		abastecimento.setValorTotal(valorTanque);
-//    		litros = Double.parseDouble(JOptionPane.showInputDialog("Quantidade de litros"));
-//    		abastecimento.setLitros(litros);	
+
     	}
 	    catch(NumberFormatException e) {
 			JOptionPane.showMessageDialog(null	,"Digite um valor válido!");
