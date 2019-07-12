@@ -19,14 +19,12 @@ public class Veiculo {
 	private String placa;
 	private String renavam;
 	private int kmDoUltimoAbastecimento;
-
 	private ArrayList<Despesa> despesas = new ArrayList(); // criando o array list pra armazenar as n despesas do
 															// veiculo
 	private ArrayList<RegistrarAbastecimento> abs = new ArrayList(); // criando o array list pra armazenar os n
 																		// vabastecimentos
 	private ArrayList<RegistrarManutencao> ma = new ArrayList(); // criando o array list pra armazenar as n manutencoes
 	private ArrayList<RegistrarTaxa> tax = new ArrayList(); // criando o array list pra armazenar as n taxas
-
 
 	
 //METODOS GETTERS DOS ARRAYLISTS
@@ -237,11 +235,9 @@ public class Veiculo {
 	public void setKmDoUltimoAbastecimento(int kmDoUltimoAbastecimento) {
 		this.kmDoUltimoAbastecimento = kmDoUltimoAbastecimento;
 	}
-
-
 	
-/*************************METODOS PARA ADICIONAR NOS ARRAYLISTS***************************************/
-	//*******************************************************************
+	
+
 	public void addDespesa(Despesa d) {
 		this.despesas.add(d);
 	}
